@@ -1,0 +1,23 @@
+
+<div id="target">
+hello it is default data
+</div>
+<span id="clik">Click me to change the value</span>
+
+<script type="text/javaScript">
+document.getElementById('clik').onclick=function()
+{
+	document.getElementById('target').innerHTML="This is the value after content changed";
+}
+
+$(document).ready(function(){
+	$('#target').bind('DOMNodeInserted DOMNodeRemoved', function(event) {
+    	if (event.type == 'DOMNodeInserted') {
+        console.log('content added');
+        console.log(this.innerHTML);
+    } else {
+        console.log('Content removed');
+    }
+});
+	});
+</script>
