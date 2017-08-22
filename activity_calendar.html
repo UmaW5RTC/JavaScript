@@ -1,0 +1,143 @@
+<div class="content-row">
+  <h2 class="content-row-title">Time Table For students (View)</h2>
+  <div class="row">
+    <div class="col-md-12">
+     
+       <div class="panel-body" id="time_table">
+       
+
+       </div>
+    </div>
+  </div>
+</div>
+<div class="clearfix"></div>
+
+<script type="text/javascript">
+	(function()
+	{
+		console.log('inside the function on loading');
+		//create_heaer();
+		create_detailTable(7,9);
+	})();
+
+function create_detailTable(days,periods)
+{
+
+
+	var container = document.getElementById('time_table');
+    // create table element
+    var table = document.createElement('table');
+    var tbody = document.createElement('tbody');
+    var thead = document.createElement('thead');
+    table.border=1;
+    var row=document.createElement('tr');
+       var cell = document.createElement('th');
+         cell.textContent = 'Months / Days';
+         // cell.setAttribute("width", '100px');
+         cell.setAttribute("height", '30px');
+         cell.setAttribute("colspan", '32');
+          cell.setAttribute("align", 'center');
+          row.appendChild(cell);
+          thead.appendChild(row);
+    table.appendChild(thead);
+    var months={'January':31,'February':28,'March':31,'April':30,'May':31,'June':30,'July':31,'August':31,'September':30,'October':31,'November':30,'December':31};
+    //Below code is to create the date vs Month
+    for(var mon in months)
+    {
+      var row=document.createElement('tr');
+       var cell = document.createElement('td');
+         cell.textContent = mon;
+         cell.setAttribute("width", '100px');
+         cell.setAttribute("height", '30px');
+          cell.setAttribute("align", 'center');
+          row.appendChild(cell);
+         var no_of_days=months[mon];
+          for(j=1;j<=no_of_days;j++)
+          {
+             var cell = document.createElement('td');
+            cell.textContent = j;
+             cell.setAttribute("width", '30px');
+             cell.setAttribute("height", '30px');
+            cell.setAttribute("align", 'center');
+            row.appendChild(cell);
+          }
+          tbody.appendChild(row);
+    }
+
+    // append tbody to table
+    table.appendChild(tbody);
+    // append table to container
+    container.appendChild(table);
+}
+
+
+
+//below script is calling and creating the time table script
+function makeTimeIntervals(startTime, endTime, increment) {
+    startTime = startTime.toString().split(':');
+    endTime = endTime.toString().split(':');
+    increment = parseInt(increment, 10);
+
+    var pad = function (n) { return (n < 10) ? '0' + n.toString() : n; },
+        startHr = parseInt(startTime[0], 10),
+        startMin = parseInt(startTime[1], 10),
+        endHr = parseInt(endTime[0], 10),
+        endMin = parseInt(endTime[1], 10),
+        currentHr = startHr,
+        currentMin = startMin,
+        previous = currentHr + ':' + pad(currentMin),
+        current = '',
+        r = [];
+
+    do {
+        currentMin += increment;
+        if ((currentMin % 60) === 0 || currentMin > 60) {
+            currentMin = (currentMin === 60) ? 0 : currentMin - 60;
+            currentHr += 1;
+        }
+        current = currentHr + ':' + pad(currentMin);
+        r.push(previous + ' - ' + current);
+        previous = current;
+  } while (currentHr !== endHr);
+
+    return r;
+};
+
+
+
+// for (var i in a)
+//     { 
+//         if (a.hasOwnProperty(i)) 
+//             {
+//               console.log(a[i]);
+//              }
+//     }
+    //creating time table script is end
+
+	// function create_timetable(days,periods)
+	// {
+	// 	//var table=document.createElement("table");
+	// 	// table.id="cr_tbl";
+	// 	var week_days=new Array("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday");
+	// 	var table=document.getElementById('time_table');
+	// 	table.border=1;
+	// 	for(var day=0;day<week_days.length;day++)
+	// 	{
+	// 	 var row = table.insertRow(day);   //This is to define the row after the previous row
+	// 	 	for(var perd=0;perd<=periods;perd++)
+	// 	 	{
+		 		
+	// 	 		if(perd!=0)
+	// 	 		{
+	// 	 			var cell = row.insertCell(perd);
+	// 	 			cell.innerHTML = 'PERIOD '+perd;
+	// 	 		}
+	// 	 		else
+	// 	 		{
+	// 	 			var cell = row.insertCell(perd);
+	// 	 			cell.innerHTML = week_days[day];
+	// 	 		}
+	// 	 	}
+	// 	}
+	// }
+</script>
