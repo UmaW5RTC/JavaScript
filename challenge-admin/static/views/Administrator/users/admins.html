@@ -1,0 +1,5 @@
+<p ng-show="admin_list.ui.total_items" class="text-muted">About {{admin_list.ui.total_items}} records.
+    <button class="btn btn-primary pull-right" ui-sref="users.admins_new">New Administrator/Counselor</button>
+</p>
+<div class="clearfix"></div>
+<div ui-grid="admin_list.ui.grid_opts" external-scopes="admin_list.grid_scope" ui-grid-resize-columns ui-grid-infinite-scroll class="grid"></div>

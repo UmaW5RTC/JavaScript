@@ -1,0 +1,31 @@
+<div>
+    <div class="pull-left">Language:
+        <select ng-model="lang" ng-change="refresh()">
+            <option value="en">English</option>
+            <option value="ko">Korean</option>
+            <option value="es">Spanish</option>
+        </select>
+    </div>
+    <div class="pull-right text-right">
+        <button ng-click="create()" class="btn btn-success">Add iZ WORLD Category</button>
+    </div>
+</div>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Edit</th>
+        <th>Order</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="c in categories">
+        <td><a ng-click="go(c)">{{c.uname}}</a></td>
+        <td><button class="btn btn-primary btn-sm" ng-click="go(c)">{{c.name}}</button></td>
+        <td><button class="btn btn-danger btn-sm" ng-click="edit(c)">Edit</button></td>
+        <td><button class="btn btn-warning btn-sm" ng-click="moveup(c)" ng-disabled="c.order==1">Up</button>
+        <button class="btn btn-warning btn-sm" ng-click="movedown(c)" ng-disabled="c.order==categories.length">Down</button></td>
+    </tr>
+    </tbody>
+</table>

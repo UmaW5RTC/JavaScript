@@ -1,0 +1,49 @@
+{#<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul side-navigation class="nav" id="side-menu">
+            {% include 'navigation/common.html' %}
+
+            <li ng-class="{active: $state.includes('anns')}">
+                <a ui-sref="anns.list"><i class="fa fa-inbox"></i> <span class="nav-label">{{_('Inbox')}}</span> </a>
+            </li>
+            <li ng-class="{active: $state.includes('squads')}" class="auto-collapse">
+                <a ui-sref="squads.list"><i class="fa fa-users"></i> <span class="nav-label">{{_('My Classes')}}</span> <i class="fa fa-question-circle" bs-tooltip data-placement="right" data-html="true" data-title="<div class='workaround'>{{_('View all class accounts.')}}</div>" data-trigger="hover"></i><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level" ng-class="{in: $state.includes('squads')}">
+                    <li ui-sref-active="active"><a ui-sref="squads.allmembers"><i class="fa fa-user"></i> {{_('All Members')}} <i class="fa fa-question-circle" bs-tooltip data-placement="right" data-html="true" data-title="<div class='workaround'>{{_('View all student accounts.')}}</div>" data-trigger="hover"></i></a></a></li>
+                    {#<li class="auto-collapse" ng-class="{active: $state.includes('squads.stickers')||$state.includes('squads.rstickers')||$state.includes('squads.stories')||$state.includes('squads.rstories')}">
+                        <a ui-sref="squads.stickers"><i class="fa fa-folder"></i> {{_('Class Work')}}  <i class="fa fa-question-circle" bs-tooltip data-placement="right" data-html="true" data-title="<div class='workaround'>{{_('View your class’ work.')}}</div>" data-trigger="hover"></i><span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level" ng-class="{in: $state.includes('squads.stickers', 'squads.rstickers')}">
+                            <li ui-sref-active="active">
+                                <a ui-sref="squads.stickers"><i class="fa fa-file-image-o"></i> {{_('Class Stickers')}}  <i class="fa fa-question-circle" bs-tooltip data-placement="right" data-html="true" data-title="<div class='workaround'>{{_('View your class’ stickers.')}}</div>" data-trigger="hover"></i></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a ui-sref="squads.rstickers"><i class="fa fa-file-image-o"></i> {{_('Removed Stickers')}}  <i class="fa fa-question-circle" bs-tooltip data-placement="right" data-html="true" data-title="<div class='workaround'>{{_('View your class’ removed stickers.')}}</div>" data-trigger="hover"></i></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a ui-sref="squads.stories"><i class="fa fa-file-image-o"></i> {{_('Class Stories')}}  <i class="fa fa-question-circle" bs-tooltip data-placement="right" data-html="true" data-title="<div class='workaround'>{{_('View your class’ storybooks.')}}</div>" data-trigger="hover"></i></a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a ui-sref="squads.rstories"><i class="fa fa-file-image-o"></i> {{_('Removed Stories')}}  <i class="fa fa-question-circle" bs-tooltip data-placement="right" data-html="true" data-title="<div class='workaround'>{{_('View your class’ removed storybooks.')}}</div>" data-trigger="hover"></i></a>
+                            </li>
+                        </ul>
+                    </li>#}{#
+                    <li ui-sref-active="active"><a ui-sref="squads.news"><i class="fa fa-bullhorn"></i>{{_('Announcements')}}  <i class="fa fa-question-circle" bs-tooltip data-placement="right" data-html="true" data-title="<div class='workaround'>{{_('Make an announcement to your class(es).')}}</div>" data-trigger="hover"></i></a></li>
+                </ul>
+            </li>
+            <li ui-sref-active="active"><a ui-sref="profile.accesscode"><i class="fa fa-file-text-o"></i> {{_('Enter Access Code')}} <i class="fa fa-question-circle" bs-tooltip data-placement="right" data-html="true" data-title="<div class='workaround'>{{_('Enter your purchased or sponsored access code.')}}</div>" data-trigger="hover"></i></a></li>
+            <!--<li ui-sref-active="active"><a ui-sref="lessons.list"><i class="fa fa-file-text-o"></i> {{_('Class Lessons')}} <i class="fa fa-question-circle" bs-tooltip data-placement="right" data-html="true" data-title="<div class='workaround'>{{_('View class lessons on cyber wellness by topics.')}}</div>" data-trigger="hover"></i></a></li>-->
+            {#<li><a href="/zone/hq#!/MissionTV" target="_blank"><i class="fa fa-play-circle"></i> {{_('iZ MISSION TV')}}  <i class="fa fa-question-circle" bs-tooltip data-placement="right" data-html="true" data-title="<div class='workaround'>{{_('30-45 seconds animated cyber wellness clips to show your class.')}}</div>" data-trigger="hover"></i></a></li>
+            <li ng-class="{active: toggledevents}" class="auto-collapse">
+                <a ng-click="toggledevents=!toggledevents"><i class="fa fa-users"></i> <span class="nav-label">{{_('Book Free Events')}}</span>  <i class="fa fa-question-circle" bs-tooltip data-placement="right" data-html="true" data-title="<div class='workaround'>{{_('Book iZ HERO events for your school.')}}</div>" data-trigger="hover"></i><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li ui-sref-active="active"><a href="https://docs.google.com/forms/d/1RU6Mcu6KkMLwNpJghkgZXsVl4ikT6_sNbIQ_ZQutRYo/viewform" target="_blank"><i class="fa fa-calendar"></i> {{_('Free Assembly Programme')}}  <i class="fa fa-question-circle" bs-tooltip data-placement="right" data-html="true" data-title="<div class='workaround'>{{_('Book an iZ HERO 30-minute assembly programme and/or Mobile School Booth for your entire school.')}}</div>" data-trigger="hover"></i></a></li>
+                    <li ui-sref-active="active"><a href="https://docs.google.com/forms/d/1SA37x9Ir_iE5oBxn591iR34ZFack5O_XlwOTrOL-cEs/viewform" target="_blank"><i class="fa fa-calendar"></i> {{_('Free Teacher’s Workshops')}}  <i class="fa fa-question-circle" bs-tooltip data-placement="right" data-html="true" data-title="<div class='workaround'>{{_('Book a teachers’ workshops for you and your colleagues to learn how to use the iZHERO.net platform.')}}</div>" data-trigger="hover"></i></a></li>
+                </ul>
+            </li>#}{#
+            <!--<li ui-sref-active="active"><a href="https://docs.google.com/forms/d/1dX1RSHWh_sxNa__oJKSa51xGAqT8G-cl5zZcqsMuE0k/viewform" target="_blank"><i class="fa fa-pencil-square-o"></i> Give Us Your Feedback</a></li>-->
+
+            {% include 'navigation/common-bottom-items.html' %}
+        </ul>
+
+    </div>
+</nav>#}

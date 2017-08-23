@@ -1,0 +1,73 @@
+<div style="max-width:500px;">
+    <p>
+        Hello Parent,
+    </p>
+
+    <p>
+        Your child’s <b style="color:#f9631c;">DQ</b> <b style="color:#4992f9;">World</b>™
+        account account has not yet been activated.
+    </p>
+
+    <p>
+        If you wish for your child develop their digital intelligence
+        (<b style="color:#f9631c;">DQ</b>™), please activate today.
+        Unactivated accounts will be deleted.
+    </p>
+
+    <p>
+        <strong style="color:#f9631c;">Your activation code is: {{activationcode}}</strong><br>
+        Please click on the following button and activate your child’s
+        <b style="color:#f9631c;">DQ</b> <b style="color:#4992f9;">World</b>™
+        account now so your child can play and learn.
+    </p>
+
+    <p style="text-align:center;">
+        <a href="{{url_root}}api/izhero/activate?username={{username}}&code={{activationcode}}&lang=en"
+           style="display:inline-block;background:#f9631c;font-size:larger;text-decoration:none;color:#fff;border-radius:4px;border:none;padding:10px 20px;">
+            <strong>ACTIVATE NOW</strong>
+        </a>
+    </p>
+
+    <p>
+        Account Details<br>
+        Your child’s <b style="color:#f9631c;">DQ</b> <b style="color:#4992f9;">World</b>™ login:<br>
+        <b>
+            Login URL:
+            <a href="{{url_root}}lang:en/#!/landing/login">{{url_root}}lang:en/#!/landing/login</a>
+        </b><br>
+        <b>
+            Activation URL:
+            <a href="{{url_root}}api/izhero/activate?username={{username}}&code={{activationcode}}&lang=en">
+                {{url_root}}lang:en/#!/landing/activate
+            </a>
+        </b><br>
+        <b>Username: {{username}}</b><br>
+        <b>Enter this activation code: {{activationcode}}</b>
+    </p>
+
+    <p>
+        If you or your child has trouble logging into
+        <b style="color:#f9631c;">DQ</b> <b style="color:#4992f9;">World</b>™,
+        please contact our Support Team at
+        <a href="mailto:contact@dqworld.net">contact@dqworld.net</a>.
+    </p>
+
+    <p>
+        Thank you for joining the
+        #<b style="color:#f9631c;">DQ</b><b style="color:#4992f9;">EveryChild</b>™ movement.
+    </p>
+
+    <p>
+        Sincerely<br>
+        <a href="{{url_root}}"><img style="width:200px;" src="{{url_root}}static/img/zones/landing/dqworld.png"></a>
+    </p>
+
+    <small>
+        If parental consent is not granted within 7 days of account creation,
+        your child’s free account and all associated information will be deleted.
+        By activating your child’s account you are in agreement with our
+        <a href="{{url_root}}lang:en/#!/doc/privacy">Terms of Use</a>
+        and
+        <a href="{{url_root}}lang:en/#!/doc/terms">Privacy Policy</a>.
+    </small>
+</div>

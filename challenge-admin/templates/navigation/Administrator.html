@@ -1,0 +1,94 @@
+
+
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul side-navigation class="nav" id="side-menu">
+                {%- include 'navigation/common.html' -%}
+{#-            <li ng-class="{active: $state.includes('dashboards')}">
+                <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level" ng-class="{in: $state.includes('dashboards')}">
+                    <li ui-sref-active="active"><a ui-sref="dashboards.dashboard_1">Dashboard v.1</a></li>
+                    <li ui-sref-active="active"><a ui-sref="dashboards.dashboard_2">Dashboard v.2</a></li>
+                    <li ui-sref-active="active"><a ui-sref="dashboards.dashboard_3">Dashboard v.3</a></li>
+                </ul>
+            </li> -#}
+{% raw %}
+            <li ng-class="{active: $state.includes('users')}" class="auto-collapse">
+                <a ui-sref="users.admins"><i class="fa fa-users"></i> <span class="nav-label">Users</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level" ng-class="{in: $state.includes('users')}">
+                    <li ui-sref-active="active"><a ui-sref="users.admins">Administrators</a></li>
+                    <li ui-sref-active="active"><a ui-sref="users.students">Students</a></li>
+                    <li ui-sref-active="active"><a ui-sref="users.izheroes">iZ HEROES</a></li>
+                    <li ui-sref-active="active"><a ui-sref="users.teachers">Teachers</a></li>
+                    <li ui-sref-active="active"><a ui-sref="users.members">Memberships</a></li>
+                    <li ui-sref-active="active"><a ui-sref="users.schoolmembers">Teacher Memberships</a></li>
+                    <!-- <li ui-sref-active="active"><a ui-sref="users.schools">Schools</a></li>
+                    <li ui-sref-active="active"><a ui-sref="users.counselors">Counselors</a></li>
+                    <li ui-sref-active="active"><a ui-sref="users.teachers">Teachers</a></li>
+                     -->
+                </ul>
+            </li>
+
+            <li ng-class="{active: $state.includes('anns')}">
+                <a ui-sref="anns.list"><i class="fa fa-bullhorn"></i> <span class="nav-label">Announcements</span> </a>
+            </li>
+
+            <li ui-sref-active="active">
+                <a ui-sref="izsquads.list"><i class="fa fa-users"></i> <span class="nav-label">Classes</span> </a>
+            </li>
+
+            <li ui-sref-active="active">
+                <a ui-sref="stickers.list"><i class="fa fa-file-image-o"></i> <span class="nav-label">Stickers</span> </a>
+            </li>
+
+            <li ui-sref-active="active">
+                <a ui-sref="stickers.gallery"><i class="fa fa-image"></i> <span class="nav-label">Gallery</span> </a>
+            </li>
+
+            <li ng-class="{active:toggledstats||$state.includes('stats.users')||$state.includes('stats.schools')}" class="auto-collapse">
+                <a ng-click="toggledstats=!toggledstats"><i class="fa fa-line-chart"></i> <span class="nav-label">Statistics</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li ui-sref-active="active"><a ui-sref="stats.users"><i class="fa fa-users"></i> <span class="nav-label">Registered Users</span></a></li>
+                    <li ui-sref-active="active"><a ui-sref="stats.schools"><i class="fa fa-book"></i> <span class="nav-label">Users per School</span></a></li>
+                </ul>
+            </li>
+
+            <li ui-sref-active="active">
+                <a ui-sref="schools.list"><i class="fa fa-university"></i> <span class="nav-label">Schools</span> </a>
+            </li>
+
+            <li ui-sref-active="active">
+                <a ui-sref="encyclopedia.category"><i class="fa fa-book"></i> <span class="nav-label">Encyclopedia</span> </a>
+            </li>
+
+            <li ui-sref-active="active">
+                <a ui-sref="missions.list"><i class="fa fa-rocket"></i> <span class="nav-label">Missions</span> </a>
+            </li>
+
+            <!--<li class="">
+                <a href=""><i class="fa fa-bolt"></i> <span class="nav-label">What's Your Power</span> </a>
+            </li>-->
+            <li ui-sref-active="active">
+                <a ui-sref="lessons.list"><i class="fa fa-bolt"></i> <span class="nav-label">Class Lessons</span> </a>
+            </li>
+
+            <li ui-sref-active="active">
+                <a ui-sref="dqresults.pretests"><i class="fa fa-bar-chart"></i> <span class="nav-label">Pretest DQ Results</span> </a>
+            </li>
+
+            <li class="">
+                <a href=""><i class="fa fa-files-o"></i> <span class="nav-label">Survey</span> </a>
+            </li>
+
+            <li class="">
+                <a href=""><i class="fa fa-random"></i> <span class="nav-label">iZ Quiz</span> </a>
+            </li>
+{% endraw %}
+
+            {%- include 'navigation/common-bottom-items.html' -%}
+
+        </ul>
+
+    </div>
+</nav>
+

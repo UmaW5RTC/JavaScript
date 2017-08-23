@@ -1,0 +1,14 @@
+<p>
+    You have requested that we reset your password.
+    To complete this request please go to:
+</p>
+<p>
+    <a href="{{url_root}}#!/landing/resetpwd?username={{username}}&amp;code={{pwdreset['code']}}">
+        {{url_root}}#!/landing/resetpwd?code={{pwdreset['code']}}
+    </a>
+    <br><strong>Confirmation code:</strong> {{pwdreset['code']}}
+</p>
+<p>
+    Sincerely<br>
+    <a href="{{url_root}}"><img style="width:200px;" src="{{url_root}}static/img/zones/landing/dqworld.png"></a>
+</p>

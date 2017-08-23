@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="izAdmin">
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}{% if current_user.role == 'Teacher' %}{{_('Teacher')}}{% else %}{{_('Admin')}}{% endif %}{% endblock %} | {{_('iZ HERO')}}</title>
+
+    {%- include 'common_link_css.html' -%}
+
+    <!-- Gritter -->
+    <!-- <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet"> -->
+    <link href="{{ url_for('static', filename='css/ui-grid.min.css', _v='3.0.0rc21') }}" rel="stylesheet">
+
+    {% block css %}
+    {% endblock %}
+</head>
+
+<body ng-controller="MainCtrl as main">
+
+<!-- Wrapper-->
+<div id="wrapper">
+
+    <!-- Navi -->
+    {% include 'navigation/%s.html' % current_user.role %}
+    <!-- // Navi -->
+
+    <!-- Page wraper -->
+    <div id="page-wrapper" class="gray-bg {{ '{{$state.current.name}}' | safe }}">
+
+        <!-- top nav -->
+        {% include 'topnavbar.html' %}
+        <!-- // top nav -->
+
+        <!-- Main view  -->
+        <div ui-view>Loading <img src="{{ url_for('static', filename="img/spinner_dots.gif") }}"></div>
+        <!-- // Main view  -->
+
+        <!-- Footer -->
+        {% include 'footer.html' %}
+
+    </div>
+    <!-- // page wrapper-->
+
+</div>
+<!-- // wrapper-->
+{%  include 'angular_main.html' %}
+
+<script src="{{ url_for('static', filename='js/ui-grid-unstable.min.js', _v='3.0.0rc22') }}"></script>
+
+<script src="{{ url_for('client.app_config') }}"></script>
+<script src="{{ url_for('static', filename='js/app/app.js') }}"></script>
+<script src="{{ url_for('static', filename='js/directives/directives.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/app/filters.js') }}"></script>
+<script src="{{ url_for('client.routesjs') }}"></script>
+
+<script src="{{ url_for('static', filename='js/app/main.js') }}"></script>
+
+{% block ajs %}{% endblock %}
+
+</body>
+</html>

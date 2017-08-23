@@ -1,0 +1,8 @@
+<p>
+    <a ui-sref="anns.list" class="btn btn-success">{{_('Back')}}</a>
+</p>
+<h1>
+    {{"{{data.title}}"}}
+</h1>
+<p><strong>{{_('Published By:')}}</strong> {{"{{data.created.username}}"}}, <strong>On:</strong> {{'{{data.created.on | moment_date:"YYYY-MM-DD hh:mm a"}}'|safe}}</p>
+<pre style="font-family:inherit;font-size:16px;">{{"{{data.body}}"}}</pre>

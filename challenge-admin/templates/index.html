@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block ajs %}
+
+{% if current_user.role == 'Teacher' %}
+<script src="{{ url_for('static', filename='js/app/Teacher/squads.js') }}"></script>
+<script src="{{ url_for('static', filename='js/app/Teacher/profile.js') }}"></script>
+<script src="{{ url_for('static', filename='js/app/Teacher/lessons.js') }}"></script>
+{% elif current_user.role == 'Counselor' %}
+<script src="{{ url_for('static', filename='js/app/%s/survey.js' % current_user.role) }}"></script>
+{% else %}
+<script src="{{ url_for('static', filename='js/app/%s/admins.js' % current_user.role) }}"></script>
+<script src="{{ url_for('static', filename='js/app/%s/users.js' % current_user.role) }}"></script>
+<script src="{{ url_for('static', filename='js/app/%s/missions.js' % current_user.role) }}"></script>
+<script src="{{ url_for('static', filename='js/app/%s/surveys.js' % current_user.role) }}"></script>
+<script src="{{ url_for('static', filename='js/app/%s/powers.js' % current_user.role) }}"></script>
+<script src="{{ url_for('static', filename='js/app/%s/quizzes.js' % current_user.role) }}"></script>
+<script src="{{ url_for('static', filename='js/app/%s/stickers.js' % current_user.role) }}"></script>
+<script src="{{ url_for('static', filename='js/app/%s/stats.js' % current_user.role) }}"></script>
+<script src="{{ url_for('static', filename='js/app/%s/izsquads.js' % current_user.role) }}"></script>
+<script src="{{ url_for('static', filename='js/app/%s/schools.js' % current_user.role) }}"></script>
+<script src="{{ url_for('static', filename='js/app/%s/encyclopedia.js' % current_user.role) }}"></script>
+<script src="{{ url_for('static', filename='js/app/%s/members.js' % current_user.role) }}"></script>
+<script src="{{ url_for('static', filename='js/app/%s/dqresults.js' % current_user.role) }}"></script>
+<script src="{{ url_for('static', filename='js/app/%s/lessons.js' % current_user.role) }}"></script>
+{% endif %}
+<script src="{{ url_for('static', filename='js/app/%s/ann.js' % current_user.role) }}"></script>
+{% endblock %}

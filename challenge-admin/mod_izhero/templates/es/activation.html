@@ -1,0 +1,57 @@
+<div style="max-width:500px;">
+    <p>
+        Hola {{givenname}},
+    </p>
+
+    <p>
+        ¡Bienvenido(a) a <b style="color:#f9631c;">DQ</b> <b style="color:#4992f9;">World</b>™!
+    </p>
+
+    <p>
+        Para que los niños prosperen en nuestro mundo hiper-conectado es esencial que desarrollen
+        su <b style="color:#f9631c;">DQ</b>™ (coeficiente de inteligencia digital).
+        <b style="color:#f9631c;">DQ</b> <b style="color:#4992f9;">World</b>™ es una plataforma
+        de auto-aprendizaje probada y comprobada para que niños de 8 a 12 años aprendan 8
+        habilidades de ciudadanía digital. El programa se presenta eficazmente a través de
+        distintos medios, relatando historias y con diseño estilo videojuego, lo cual hace
+        que el aprendizaje sea interactivo y divertido, y promueve un cambio positivo en las
+        actitudes y comportamientos.
+    </p>
+
+    <p>
+        <strong>
+            ACTIVAR - Por favor haga clic en el enlace a continuación e inicie sesión con su
+            nombre de usuario y contraseña temporal para obtener acceso a la cuenta de su clase.
+        </strong><br><br>
+
+        <a href="{{url_for('admin_teacher.activate', username=username, code=activationcode, lang='es', _external=True)}}"
+           style="display:inline-block;background:#f9631c;font-size:larger;text-decoration:none;color:#fff;border-radius:4px;border:none;padding:10px 20px;">
+            <strong>ACTIVATE NOW</strong>
+        </a><br><br>
+
+        Detalles de la Cuenta<br>
+        Nombre de Usuario: {{username}}<br>
+        Ingrese éste Código de Activación: <b>{{activationcode}}</b><br>
+        URL del Sitio: <a href="{{url_root}}lang:es">{{url_root}}</a>
+    </p>
+
+    <p>
+        <strong>Vea la mejoría.</strong> Los resultados iniciales indican una reducción del
+        30% en los comportamientos riesgosos en internet y un aumento en las fortalezas
+        personales tales como el pensamiento crítico, la empatía, y la ciudadanía global.
+    </p>
+
+    <p>
+        Gracias por unirse al movimiento
+        #<b style="color:#f9631c;">DQ</b><b style="color:#4992f9;">EveryChild</b>™.
+    </p>
+
+    <p>
+        Atentamente,<br>
+        <a href="{{url_root}}"><img style="width:200px;" src="{{url_root}}static/img/zones/landing/dqworld.png"></a>
+    </p>
+
+    <p>
+        <img src="{{url_root}}admin/static/img/activation/en/bottom-features.jpg">
+    </p>
+</div>

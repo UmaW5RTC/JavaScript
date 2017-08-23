@@ -1,0 +1,23 @@
+<div class="text-right">
+    <button ng-click="create()" class="btn btn-success">Add Page</button>
+    <button ng-click="back()" class="btn btn-primary">Back</button>
+</div>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Edit</th>
+        <th>Order</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="c in pages">
+        <td>{{c.uname}}</td>
+        <td>{{c.name}}</td>
+        <td><button class="btn btn-danger btn-sm" ng-click="edit(c)">Edit</button></td>
+        <td><button class="btn btn-warning btn-sm" ng-click="moveup(c)" ng-disabled="c.order==1">Up</button>
+        <button class="btn btn-warning btn-sm" ng-click="movedown(c)" ng-disabled="c.order==categories.length">Down</button></td>
+    </tr>
+    </tbody>
+</table>

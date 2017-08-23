@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html ng-app="loginApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | iZ HERO Admin</title>
+
+    {%- include 'common_link_css.html' -%}
+
+</head>
+
+<body ng-controller="LoginCtrl" class="gray-bg">
+
+    <div class="middle-box text-center loginscreen animated fadeInDown">
+        <div>
+            <div>
+                <h1 class="logo-name"><img src="/static/img/zones/landing/dqworld.png" class="img-responsive" alt="DQ World"></h1>
+            </div>
+            <h3>Admin Module</h3>
+            <div ng-show="ui.success==false && ui.error_msg" class="alert alert-danger">{{ "{{ ui.error_msg }}" | safe }}</div>
+
+            <!--[if IE]>
+            <div class="alert alert-warning">
+                Please upgrade to the latest version of Internet Explorer browser for best result on this site.
+            </div>
+            <![endif]-->
+
+            <form ng-submit="login()" ng-hide="ui.success" name="login_form" class="m-t" role="form">
+                <div class="form-group">
+                    <!--[if IE]><label>Username</label><![endif]-->
+                    <input ng-model="data.username" name="username" type="text" class="form-control" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <!--[if IE]><label>Password</label><![endif]-->
+                    <input ng-model="data.password" name="password" type="password" class="form-control" placeholder="Password" required>
+                </div>
+                <button ng-disable="login_form.$invalid || ui.busy" type="submit" class="btn btn-primary block full-width m-b">{{ "{{ ui.busy && 'Please wait...' || 'Login' }}" | safe}}</button>
+
+                <!-- <a href="#"><small>Forgot password?</small></a> -->
+            </form>
+            <div class="m-t" ng-if="ui.success">
+                <p>Welcome back, <strong>{{ "{{ data.username }}" | safe }}</strong>.</p>
+                <p>Please wait while we load the <strong>{{ "{{ data.role }}" | safe }}</strong> module <img src="{{ url_for('static', filename='img/spinner_dots.gif') }}"></p>
+            </div>
+
+            <p class="m-t"> <small>{%  include 'copyright.html' %} <span class="text-muted">version {{config['VERSION']}}</span></small> </p>
+        </div>
+    </div>
+
+{%-  include 'angular_main.html' -%}
+
+
+<script>
+    'use strict';
+
+    angular.module('loginApp', [])
+
+    .controller('LoginCtrl', function($scope, $http){
+
+        $scope.ui = {
+            busy: false,
+            success: null,
+            error_msg: ''
+        };
+
+        $scope.data = {
+            username: '',
+            password: ''
+        };
+
+        $scope.login = function() {
+            $scope.ui.busy = true;
+            $scope.ui.success = null;
+
+            $http.post("{{url_for('auth.login')}}", $scope.data)
+                .success(function(res) {
+                    $scope.ui.busy = false;
+
+                    if ($scope.ui.success = res.success) {
+                        $scope.data.role = res.user.role;
+                        window.location = "{{url_for('client.index')}}";
+                    }
+                    else {
+                        $scope.ui.error_msg = 'Wrong username or password.';
+                    }
+                })
+
+                .error(function(res){
+                    $scope.ui.busy = false;
+                    $scope.ui.success = false;
+                    $scope.ui.error_msg = 'We have trouble contacting the server. Please try again.';
+                });
+        }
+
+    })
+
+    ;
+
+</script>
+
+
+</body>
+</html>

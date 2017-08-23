@@ -1,0 +1,8 @@
+<form ng-submit="genExcel()">
+    <button class="btn btn-primary">
+        {{teach_list.ui.genexcel && 'Please wait...' || 'Download Excel'}}
+        <i ng-style="{visibility:teach_list.ui.genexcel&&'visible'||'hidden'}" class="fa fa-spinner fa-spin"></i>
+    </button>
+</form>
+<p ng-show="teach_list.ui.total_items" class="text-muted">About {{teach_list.ui.total_items}} records.</p>
+<div ui-grid="teach_list.ui.grid_opts" external-scopes="teach_list.grid_scope" ui-grid-infinite-scroll ui-grid-resize-columns ui-grid-edit class="grid"></div>

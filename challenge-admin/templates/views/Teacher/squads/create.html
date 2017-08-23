@@ -1,0 +1,69 @@
+<div class="row">
+    <div class="col-xs-12">
+        <form class="form-horizontal" name="squad_form">
+            {# <div class="form-group">
+                <label for="squadschool" class="col-sm-4 col-md-3 col-lg-2 control-label">{{_('School Name')}}*:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <select ng-model="squad.squad.school" ng-options="s as s for s in squad.schools" class="form-control" id="squadschool" name="squadschool" required>
+                        <option value="">{{_('-- Select School (Required) --')}}</option>
+                    </select>
+                    <input type="text" ng-model="squad.squad.school_others" ng-show="squad.squad.school == 'Others'" class="form-control" id="school_others" name="school_others" placeholder="{{_('Type your school name.')}}">
+                    <div class="text-danger" ng-show="squad_form.squadschool.$dirty && squad_form.squadschool.$error.required">
+                        {{_('Required')}}
+                    </div>
+                </div>
+            </div> #}
+            <div class="form-group" ng-if="!ui.is_sub">
+                <label class="col-sm-4 col-md-3 col-lg-2 control-label">{{_('Name of Teacher')}}:</label>
+                <div class="col-sm-4 col-md-3 col-lg-3">
+                    <input type="text" ng-model="squad.squad.teacher_givenname" class="form-control" id="teacher_givenname" name="teacher_givenname" placeholder="{{_('Given Name')}}">
+                </div>
+                <div class="col-sm-4 col-md-3 col-lg-3">
+                    <input type="text" ng-model="squad.squad.teacher_familyname" class="form-control" id="teacher_familyname" name="teacher_familyname" placeholder="{{_('Family Name')}}">
+                </div>
+            </div>
+            <div class="form-group" ng-if="!ui.is_sub">
+                <label for="teacher_email" class="col-sm-4 col-md-3 col-lg-2 control-label">{{_('Teacher’s Email')}}:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <input type="email" ng-model="squad.squad.teacher_email" class="form-control" id="teacher_email" name="teacher_email" placeholder="{{_('Email')}}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="squadname" class="col-sm-4 col-md-3 col-lg-2 control-label">{{_('Class Name')}}*:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <input type="text" ensure-unique="teachers/squadname" params="{school: squad.getschool()}" minlength="0" ng-model="squad.squad.name" class="form-control" id="squadname" name="squadname" placeholder="{{_('Enter a name for your class (Required)')}}" required>
+                    <div class="text-danger" ng-show="squad_form.squadname.$dirty && squad_form.squadname.$error.required">
+                        {{_('Required')}}
+                    </div>
+                    <div class="text-danger" ng-show="squad_form.squadname.$dirty && squad_form.squadname.$error.ensureUnique">
+                        {{_('The squad name is already in use. Please choose another name for your squad.')}}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="squadgrade" class="col-sm-4 col-md-3 col-lg-2 control-label">{{_('Grade')}}*:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <input type="text" ng-model="squad.squad.grade" class="form-control" id="squadgrade" name="squadgrade" placeholder="{{_('Grade (ex) P1')}}" required>
+                    <div class="text-danger" ng-show="squad_form.squadgrade.$dirty && squad_form.squadgrade.$error.required">
+                        {{_('Required')}}
+                    </div>
+                </div>
+            </div>
+            <div ng-hide="ui.edit" class="form-group">
+                <label for="squadmembers" class="col-sm-4 col-md-3 col-lg-2 control-label">{{_('No. of student accounts')}}:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <input type="number" ng-model="squad.squad.members_count" min="0" max="1000" class="form-control" id="squadmembers" name="squadmembers" placeholder="#">
+                    <div class="text-danger" ng-show="squad_form.squadmembers.$dirty && squad_form.squadmembers.$error.number">
+                        {{_('Must be a number')}}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button ng-click="squad.save(squad.squad)" type="button" ng-disabled="squad_form.$invalid" class="btn btn-success">{{_('Submit')}}</button>
+                    <button ng-click="squad.cancel()" type="button" class="btn btn-danger">{{_('Cancel')}}</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<p>About {{ui.total || 0}} sticker(s)</p>
+<div class="row" ng-show="sticker">
+    <div class="squad-sticker">
+        <p class="text-center">
+            <a ng-disabled="!ui.has_prev || ui.busy" ng-click="prev()" class="btn btn-success">Previous</a>
+            <a ng-click="sticker=null" class="btn btn-primary">Back</a>
+            <a ng-disabled="!ui.has_next || ui.busy" ng-click="next()" class="btn btn-success">Next</a>
+        </p>
+        <div class="squad-sticker">
+            <div class="col-lg-6" style="max-width:590px;width:100%;position:relative;">
+                <div ng-show="ui.has_page_prev" ng-click="page_prev()" style="position:absolute;top:40%;font-size:xx-large;left:5px;"><i class="fa fa-caret-square-o-left"></i></div>
+                <div ng-show="ui.has_page_next" ng-click="page_next()" style="position:absolute;top:40%;font-size:xx-large;right:5px;"><i class="fa fa-caret-square-o-right"></i></div>
+                <img ng-if="sticker" ng-src="{{current.image}}" class="img-responsive pull-right thumbnail">
+                <div class="clearfix"></div>
+                <h2 class="text-center" style="margin:0;">{{current.caption}}</h2>
+            </div>
+            <div class="col-lg-6 thumbnail">
+                <div class="comment">
+                    <p>
+                        <a ng-click="remove_sticker(sticker)" ng-show="!sticker.meta.removed" class="btn btn-danger">Remove from Gallery</a>
+                        <a ng-click="readd_sticker(sticker)" ng-show="sticker.meta.removed" class="btn btn-danger">Move To Gallery</a>
+                    </p>
+                    <strong>By: </strong>{{sticker.file.created.username}}<br>
+                    <strong>On: </strong>{{sticker.file.created.on | moment_date:"YYYY-MM-DD, hh:mm a"}}<br>
+                    <strong>Likes: </strong>{{sticker.meta.likes_count}}
+                </div><br><br>
+                <p class="comment" ng-repeat="comment in sticker.nominated">
+                    <span>{{comment.text}}</span><br>
+                    <small><strong>By</strong>: <span class="text-success">{{comment.username}}</span>
+                    &bull; <strong>On</strong>: <span class="text-success">{{comment.on | moment_date:"YYYY-MM-DD, hh:mm a"}}</span></small>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-hide="sticker" class="row">
+    <div class="col-xs-12">
+        <select ng-model="galltype">
+            <option value="">ALL</option>
+            <option value="reported">Reported</option>
+            <option value="removed">Removed</option>
+        </select>
+        <button class="btn btn-sm btn-success" ng-click="regetData()">Submit</button>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 squad-stickers" ng-repeat="stker in stickers track by $index">
+        <div class="info-data">{{stker.file.created.username}}
+            <a ng-click="remove_sticker(stker)" ng-show="!stker.meta.removed" class="remove"><small>Remove</small></a>
+            <a ng-click="readd_sticker(stker)" ng-show="stker.meta.removed" class="remove"><small>To Gallery</small></a>
+        </div>
+        <img ng-src="{{stker.file.filename}}" class="img-responsive" ng-click="open_sticker(stker, $index)">
+    </div>
+</div>
+<p>&nbsp;</p>

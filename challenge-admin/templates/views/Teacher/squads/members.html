@@ -1,0 +1,46 @@
+<div ng-if="member_list.ui.squad_code">
+    <strong>{{_('Select Class')}}:</strong> <select ng-model="member_list.ui.squad_code" ng-options="s.code as s.name for s in member_list.ui.squads_list">
+    </select>
+    <div class="btn-group pull-right">
+        {#<button ui-sref="squads.add_member({code:member_list.ui.squad_code,name:member_list.ui.squad_name})" class="btn btn-default">{{_('Add Member')}}</button>#}
+        {#<button ui-sref="squads.stickers({code:member_list.ui.squad_code})" class="btn btn-danger">{{_('View Stickers')}}</button>
+        <button ui-sref="squads.stories({code:member_list.ui.squad_code})" class="btn btn-warning">{{_('View iZ STORY')}}</button>#}
+        {#<button ui-sref="squads.news({code:member_list.ui.squad_code})" class="btn btn-success">{{_('Make an Announcement')}}</button>#}
+    </div>
+    <div class="clearfix"></div>
+</div>
+{#<p class="pull-right">Used Paid Accounts: {{'{{member_list.ui.assigned}}'}}, Available: {{'{{member_list.ui.accounts-member_list.ui.assigned}}'}}</p>#}
+<p ng-show="member_list.ui.total_items" class="text-muted">{{_('About {{member_list.ui.total_items}} records.')}}</p>
+
+{#<div ng-show="member_list.ui.tutorial==1" class="squadtut step-1">
+    <h3>{{_('Congratulations!')}}</h3>
+    <p>{{_('You have created a Class account for your class.')}}</p>
+    <button class="btn btn-warning" ng-click="member_list.ui.tutorial=2">{{_('Ok')}}</button>
+</div>#}
+<div ng-show="member_list.ui.tutorial" class="bottom squadtut step-2">
+    <p>{{_('Distribute individual Username and Passwords (PW) to your students. When they log in, they will be asked to change their usernames and passwords.')}}</p>
+    <button class="btn btn-warning" ng-click="close_tutorial()">{{_('Ok')}}</button>
+</div>
+{#<div ng-show="member_list.ui.tutorial==3" class="bottom squadtut step-3">
+    <p>{{_('Your students’ new information and activities will be automatically reflected in this iZ HERO Teacher Panel.')}}</p>
+    <button class="btn btn-warning" ng-click="member_list.ui.tutorial=4">{{_('Next')}}</button>
+</div>
+<div ng-show="member_list.ui.tutorial==4" class="bottom squadtut step-6">
+    <p>{{_('If you’d like to add another student to your class, you can click here to add new members.')}}</p>
+    <button class="btn btn-warning" ng-click="member_list.ui.tutorial=7">{{_('Next')}}</button>
+</div>
+<div ng-show="member_list.ui.tutorial==5" class="bottom squadtut step-5">
+    <p>{{_('Here, you can view your class’ sticker creations and have the ability to check and delete inappropriate artwork.')}}</p>
+    <button class="btn btn-warning" ng-click="member_list.ui.tutorial=6">{{_('Next')}}</button>
+</div>
+<div ng-show="member_list.ui.tutorial==6" class="bottom squadtut step-6">
+    <p>{{_('You can also view and delete your class’ storybooks that they created...')}}</p>
+    <button class="btn btn-warning" ng-click="member_list.ui.tutorial=7">{{_('Next')}}</button>
+</div>
+<div ng-show="member_list.ui.tutorial==7" class="bottom squadtut step-7">
+    <p>{{_('...and make an announcement to all your classes or an individual class.')}}</p>
+    <button class="btn btn-warning" ng-click="close_tutorial()">{{_('Done')}}</button>
+</div>#}
+
+<!-- Teacher can manage their students of class -->
+<div ui-grid="member_list.ui.grid_opts" external-scopes="member_list.grid_scope" ui-grid-resize-columns ui-grid-edit class="grid"></div>

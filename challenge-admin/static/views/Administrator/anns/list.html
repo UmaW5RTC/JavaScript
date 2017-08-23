@@ -1,0 +1,11 @@
+<div class="pull-left btn-group">
+    <a ui-sref-active="active" ui-sref="anns.list" class="btn btn-primary">Announcements</a>
+    <a ui-sref-active="active" ui-sref="anns.feedbacks" class="btn btn-success">Feedbacks</a>
+</div>
+<div class="pull-right btn-group">
+    <a ui-sref="anns.create" class="btn btn-warning">Make an Announcement</a>
+    <button ng-click="deleteAnns()" class="btn btn-danger">Delete</button>
+</div>
+<div class="clearfix"></div>
+<br>
+<div ui-grid="ui.grid_opts" external-scopes="grid_scope" ui-grid-selection ui-grid-resize-columns ui-grid-pagination class="grid"></div>

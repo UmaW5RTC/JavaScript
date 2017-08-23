@@ -1,0 +1,80 @@
+<!--<div class="row">
+    <div class="col-xs-12">
+        <form class="form-horizontal" name="hero_form">
+            <div class="form-group">
+                <label for="givenname" class="col-sm-4 col-md-3 col-lg-2 control-label">Username*:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <input type="text" ng-model="member.izhero.username" class="form-control" id="username" name="username" placeholder="Username" required>
+                    <div class="text-danger" ng-show="hero_form.username.$dirty && hero_form.username.$error.required">
+                        Required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="givenname" class="col-sm-4 col-md-3 col-lg-2 control-label">Password*:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <input type="text" ng-model="member.izhero.password" class="form-control" id="password" name="password" placeholder="Password" ng-minlength="8" ng-maxlength="55" required>
+                    <div class="text-danger" ng-show="hero_form.password.$dirty && hero_form.password.$error.required">
+                        Required
+                    </div>
+                    <div class="text-danger" ng-show="hero_form.password.$dirty && hero_form.password.$error.minlength">
+                        The password must be at least 8 characters.
+                    </div>
+                    <div class="text-danger" ng-show="hero_form.password.$dirty && hero_form.password.$error.maxlength">
+                        The password must not be more than 55 characters.
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="givenname" class="col-sm-4 col-md-3 col-lg-2 control-label">Given Name:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <input type="text" ng-model="member.izhero.givenname" class="form-control" id="givenname" name="givenname" placeholder="Given Name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="familyname" class="col-sm-4 col-md-3 col-lg-2 control-label">Family Name:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <input type="text" ng-model="member.izhero.familyname" class="form-control" id="familyname" name="familyname" placeholder="Family Name">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button ng-click="member.save(member.izhero)" type="button" ng-disabled="hero_form.$invalid" class="btn btn-success">Submit</button>
+                    <button ng-click="member.cancel()" type="button" class="btn btn-danger">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<br>
+<hr>
+<br>-->
+<div class="row">
+    <div class="col-xs-12">
+        <div class="row">
+            <div class="col-sm-offset-4 col-md-offset-3 col-lg-offset-2 col-sm-10 col-md-8 col-lg-6">
+                <h3>Generate Member Accounts</h3>
+            </div>
+        </div>
+        <form class="form-horizontal" name="count_form">
+            <div class="form-group">
+                <label for="squadmembers" class="col-sm-4 col-md-3 col-lg-2 control-label">Additional no. of student accounts:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <input type="number" ng-model="members_count" class="form-control" id="squadmembers" name="squadmembers" placeholder="#" required>
+                    <div class="text-danger" ng-show="count_form.squadmembers.$dirty && count_form.squadmembers.$error.required">
+                        required
+                    </div>
+                    <div class="text-danger" ng-show="count_form.squadmembers.$dirty && count_form.squadmembers.$error.number">
+                        Must be a number
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button ng-click="member.generate(members_count)" type="button" ng-disabled="count_form.$invalid" class="btn btn-success">Generate</button>
+                    <button ng-click="member.cancel()" type="button" class="btn btn-danger">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

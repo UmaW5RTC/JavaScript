@@ -1,0 +1,11 @@
+<p>Ha solicitado información sobre su(s) cuenta(s) en </p>
+<p>He aquí el o los nombre(s) de usuario que están registrados bajo su correo electrónico:</p>
+<ol>
+    {% for acct in accounts %}
+        <li>{{acct['username']}}</li>
+    {% endfor %}
+</ol>
+<p>
+    Atentamente,<br>
+    <a href="{{url_root}}"><img style="width:200px;" src="{{url_root}}static/img/zones/landing/dqworld.png"></a>
+</p>

@@ -1,0 +1,19 @@
+<form ng-submit="genExcel()">
+    <button ng-disabled="dqresult_list.ui.genexcel" class="btn btn-primary">
+        {{dqresult_list.ui.genexcel && 'Please wait...' || 'Download Excel'}}
+        <i ng-style="{visibility:dqresult_list.ui.genexcel&&'visible'||'hidden'}" class="fa fa-spinner fa-spin"></i>
+    </button>
+</form>
+<div class="pull-right">
+    <button ng-click="deleteAccounts()" ng-disabled="dqresult_list.ui.busy" class="btn btn-danger btn-sm">DELETE</button>
+</div>
+<form ng-submit="calcResult(username)">
+    <input type="text" ng-model="username">
+    <button ng-disabled="dqresult_list.ui.busy" class="btn btn-success">
+        Calculate DQ
+        <i ng-style="{visibility:dqresult_list.ui.busy&&'visible'||'hidden'}" class="fa fa-spinner fa-spin"></i>
+    </button>
+</form>
+<p ng-show="dqresult_list.ui.total_items" class="text-muted">About {{dqresult_list.ui.total_items}} records.</p>
+<div class="clearfix"></div>
+<div style="height:860px;" ui-grid="dqresult_list.ui.grid_opts" external-scopes="dqresult_list.grid_scope" ui-grid-selection ui-grid-pagination ui-grid-resize-columns ui-grid-edit class="grid"></div>

@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-xs-12">
+        <p class="text-right">
+            <button type="button" ng-click="resetdq()" class="btn btn-danger">Reset DQ Progress</button>
+        </p>
+        <form class="form-horizontal" name="admin_form">
+            <div class="form-group">
+                <label for="username" class="col-sm-4 col-md-3 col-lg-2 control-label">Username*:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <input type="text" ng-model="data.username" class="form-control" id="username" name="username" placeholder="Username (Required)" required>
+                    <div class="text-danger" ng-show="admin_form.username.$dirty && admin_form.username.$error.required">
+                        Required
+                    </div>
+                    <div class="text-danger" ng-show="ui.username_in_use">
+                        Username already exists
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="points" class="col-sm-4 col-md-3 col-lg-2 control-label">Points:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <input type="number" ng-model="data.points" class="form-control" id="points" name="points" placeholder="Points">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="coins" class="col-sm-4 col-md-3 col-lg-2 control-label">iZ COINS:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <input type="number" ng-model="data.coins" class="form-control" id="coins" name="coins" placeholder="iZ COINS">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="guardiansack" class="col-sm-4 col-md-3 col-lg-2 control-label">Guardian's Acknowledgement:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6 text-left">
+                    <input style="width:30px;" type="checkbox" ng-model="data.guardiansack" class="form-control" id="guardiansack" name="guardiansack">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button ng-click="save(data)" type="button" ng-disabled="admin_form.$invalid || ui.busy" class="btn btn-success">Submit</button>
+                    <button ng-click="cancel()" type="button" class="btn btn-danger">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

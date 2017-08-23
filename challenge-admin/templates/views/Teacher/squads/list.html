@@ -1,0 +1,47 @@
+{#<!--<div class="row">
+    <div class="col-xs-12" ng-repeat="squad in squad_list.squads">
+        <div class="row">
+            <div ui-sref="squads.members({code:squad.code,name:squad.name})" class="thumbnail pull-left text-center" style="width:200px;cursor:pointer;">
+                <h3>
+                    <i class="fa fa-users" style="font-size:100px;"></i>
+                    <br><br>
+                    <p>{{squad.name}}</p>
+                </h3>
+            </div>
+            <div class="pull-left" style="padding:10px 0 0 10px;">
+                <div><strong>iZ SQUAD Name:</strong> {{squad.name}}</div>
+                <div><strong>iZ SQUAD Code:</strong> {{squad.code}}</div>
+                <div><strong>Grade:</strong> {{squad.grade}}</div>
+                <div><strong>School:</strong> {{squad.school}}</div>
+                <div><strong>Members:</strong> {{squad.members_count}}</div>
+                <div><strong>Total iZP:</strong> {{squad.points}} iZP</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="row">
+            <div ui-sref="squads.create" class="thumbnail pull-left text-center" style="width:200px;cursor:pointer;">
+                <h3>
+                    <i class="fa fa-plus" style="font-size:100px;"></i>
+                    <br><br>
+                    <span>Create a new iZ SQUAD</span>
+                </h3>
+            </div>
+        </div>
+    </div>
+</div>-->#}
+{#<p class="text-left" ng-show="!squad_list.ui.tutorial">
+    <a ui-sref="squads.create({is_tutorial:squad_list.ui.tutorial})" class="btn btn-primary btn-lg">{{_('Create a new Class')}} <i class="fa fa-question-circle" bs-tooltip data-title="{{_('Create an account for your class.')}}" data-placement="right"></i></a>
+</p>
+
+<div class="text-center" ng-show="squad_list.ui.tutorial">
+    <a ng-show="squad_list.ui.tutorial" ui-sref="squads.create({is_tutorial:squad_list.ui.tutorial})" class="btn btn-primary btn-xl">{{_('Create a new Class')}} <i class="fa fa-question-circle" bs-tooltip data-title="{{_('Create an account for your class.')}}" data-placement="right"></i></a>
+    <div ng-show="squad_list.ui.tutorial" class="squadtut step-0 bottom">
+        <p>{{_('Click to create an account for your class.')}}</p>
+        <button class="btn btn-warning" ng-click="close_tutorial()">{{_('Later')}}</button>
+    </div>
+</div>#}
+
+{#<p class="pull-right">Used Paid Accounts: {{'{{squad_list.ui.assigned}}'}}, Available: {{'{{squad_list.ui.accounts-squad_list.ui.assigned}}'}}</p>#}
+<p ng-show="squad_list.ui.total_items" class="text-muted">{{_('About {{squad_list.ui.total_items}} records.')}}</p>
+<div ng-show="squad_list.ui.total_items" ui-grid="squad_list.ui.grid_opts" external-scopes="squad_list.grid_scope" ui-grid-resize-columns class="grid"></div>

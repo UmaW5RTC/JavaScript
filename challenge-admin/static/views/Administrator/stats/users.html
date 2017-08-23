@@ -1,0 +1,113 @@
+<div class="container-fluid">
+<div class="text-center">
+    <div class="btn-group">
+        <button class="btn btn-success" ng-click="ui.loggedin=0" ng-class="{active:!ui.loggedin}">All users</button>
+        <button class="btn btn-primary" ng-click="ui.loggedin=1" ng-class="{active:ui.loggedin}">Users who have logged in</button>
+    </div>
+</div>
+<h1 class="text-center">Users Registered Per Month</h1>
+<div class="row">
+    <div class="col-sm-12 col-md-8">
+        <canvas id="monthlyusers" width="900" height="500"></canvas>
+    </div>
+    <div class="col-sm-12 col-md-4">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Year-Month</th>
+                <th>No. of New Users</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="month in data.months">
+                <td>
+                    <a ng-click="getMonth(month.year, month.month)">{{month.year}}-{{month.month}}</a>
+                </td>
+                <td>
+                    <strong>{{month.count}}</strong>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-right">
+                    <em>Total</em>
+                </td>
+                <td>
+                    <strong>{{total.year}}</strong>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<hr>
+<h1 class="text-center">Users Registered Per Day</h1>
+<div class="row">
+    <div class="col-sm-12 col-md-8">
+        <canvas id="dailyusers" width="900" height="500"></canvas>
+    </div>
+    <div class="col-sm-12 col-md-4">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Year-Month-Day</th>
+                <th>No. of New Users</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="day in data.days">
+                <td>
+                    <a ng-click="getDay(day.year, day.month, day.day)">{{day.year}}-{{day.month}}-{{day.day}}</a>
+                </td>
+                <td>
+                    <strong>{{day.count}}</strong>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-right">
+                    <em>Total</em>
+                </td>
+                <td>
+                    <strong>{{total.month}}</strong>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<hr>
+<h1 class="text-center">Users Registered Per Hour</h1>
+<div class="row">
+    <div class="col-sm-12 col-md-8">
+        <canvas id="hourlyusers" width="900" height="500"></canvas>
+    </div>
+    <div class="col-sm-12 col-md-4">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Year-Month-Day-Hour</th>
+                <th>No. of New Users</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="day in data.hours">
+                <td>
+                    {{day.year}}-{{day.month}}-{{day.day}} <em>{{day.hour}}:00</em>
+                </td>
+                <td>
+                    <strong>{{day.count}}</strong>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-right">
+                    <em>Total</em>
+                </td>
+                <td>
+                    <strong>{{total.day}}</strong>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<hr>
+</div>

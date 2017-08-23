@@ -1,0 +1,74 @@
+<div style="max-width:500px;">
+    <p>
+        안녕하세요!
+        {%- if givenname or familyname -%}
+            {{familyname or ""}}{{givenname or ""}} 선생님,
+        {%- endif -%}
+    </p>
+
+    <p>
+        <b style="color:#f9631c;">DQ</b> <b style="color:#4992f9;">World</b>™에 오신 것을 환영합니다.<br>
+        {{school}}의 {{hod_familyname or ""}}{{hod_givenname or ""}}님께서 당신에게
+        <a href="{{url_root}}">DQWorld.net</a> 웹사이트의 가입 초대장을 보냈습니다.
+    </p>
+
+    <p>
+        우리 아이들이 모든 것이 연결되는 세상인 초연결사회를 살아가기 위해서는
+        <b style="color:#f9631c;">DQ</b>™ (digital intelligence quotient,
+        디지털 지능 지수)의 개발은 중대한 일입니다.
+        <b style="color:#f9631c;">DQ</b> <b style="color:#4992f9;">World</b>™
+        는 세계적으로 검증된 8-12세 아이들에게 디지털 시민 능력을 가르치기 위한
+        자기주도형 이러닝 플랫폼입니다. 아이들이 재미있게 학습할 수 있도록
+        디지털미디어 스토리텔링과 게임 형식으로 설계된 프로그램을 통해서 긍정적인
+        태도 변화까지 이끄는 효과적인 교육 프로그램입니다.
+        다음의 간단한 2단계 과정을 통해 학생들이
+        <b style="color:#f9631c;">DQ</b>™ 를 시작할 수 있습니다.
+    </p>
+
+    <ol>
+        <li>
+            <strong>
+                인증 - 학급 계정에 접근하려면 아래 링크를 통해 사용자 아이디와
+                임시 비밀번호로 로그인해서 계정 인증을 진행하세요.
+            </strong><br><br>
+
+            <a href="{{url_root}}lang:ko/#!/landing/login"
+               style="display:inline-block;background:#f9631c;font-size:larger;text-decoration:none;color:#fff;border-radius:4px;border:none;padding:10px 20px;">
+                인증하기
+            </a>
+
+            계정 정보<br>
+            사용자 아이디: {{username}}<br>
+            비밀번호: {{password}}<br>
+            웹사이트 주소: <a href="{{url_root}}">{{url_root}}</a><br><br>
+        </li>
+        <li>
+            <strong>
+                자기주도학습의 관리 - 최소의 노력으로 적정 수준
+                혹은 최대의 학습 관리 효과를 선택하세요.
+            </strong><br>
+            <b style="color:#f9631c;">DQ</b> <b style="color:#4992f9;">World</b>™는
+            교사용 관리 시스템을 통해 필요한 모든 자료와 안내서를 제공합니다.
+        </li>
+    </ol>
+
+    <p>
+        <strong>개선사항을 직접 확인하세요.</strong> 선행 연구를 통해
+        온라인 위험 행동이 30% 감소했고, 온라인 정보 선별, 공감, 디지털
+        시민 의식과 같은 개인 능력이 강화됨을 확인했습니다.
+    </p>
+
+    <p>
+        #<b style="color:#f9631c;">DQ</b><b style="color:#4992f9;">EveryChild</b>™
+        운동에 참여해주셔서 감사합니다.
+    </p>
+
+    <p>
+        고맙습니다.<br>
+        <a href="{{url_root}}"><img style="width:200px;" src="{{url_root}}static/img/zones/landing/dqworld.png"></a>
+    </p>
+
+    <p>
+        <img src="{{url_root}}admin/static/img/activation/ko/bottom-features.jpg">
+    </p>
+</div>

@@ -1,0 +1,20 @@
+db.auth_sessions.ensureIndex({"expiry":1}, {"expireAfterSeconds":0})
+
+db.administrators.ensureIndex({"email":1},{"unique":true})
+db.administrators.ensureIndex({"status":1,"email":1})
+
+db.countries.ensureIndex({"name":1},{"unique":true})
+db.countries.ensureIndex({"schools":1})
+db.countries.ensureIndex({"schools_unverified":1})
+
+db.teachers.ensureIndex({"email":1},{"unique":true})
+db.teachers.ensureIndex({"username":1},{"unique":true})
+db.teachers.ensureIndex({"squads.code":1})
+db.teachers.ensureIndex({"country":1})
+
+db.izheroes.ensureIndex({"username":1},{"unique":true})
+db.izheroes.ensureIndex({"squad.code":1})
+db.izheroes.ensureIndex({"status":1,"username":1})
+db.izheroes.ensureIndex({"parent.email":1})
+db.izheroes.ensureIndex({"school":1})
+db.izheroes.ensureIndex({"country":1})

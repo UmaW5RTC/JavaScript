@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-xs-12">
+        <form class="form-horizontal" name="ann_form">
+            <div class="form-group">
+                <label for="title" class="col-sm-4 col-md-3 col-lg-2 control-label">{{_('Subject')}}*:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <input type="text" ng-model="data.title" class="form-control" id="title" name="title" required>
+                    <div class="text-danger" ng-show="ann_form.title.$dirty && ann_form.title.$error.required">
+                        {{_('Required')}}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="body" class="col-sm-4 col-md-3 col-lg-2 control-label">{{_('Text')}}:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <textarea rows="10" id="body" name="body" ng-model="data.body" class="form-control">
+                    </textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button ng-click="save(data)" type="button" ng-disabled="ann_form.$invalid||ui.busy" class="btn btn-success">{{_('Submit')}}</button>
+                    <a ui-sref="anns.list" type="button" class="btn btn-danger">{{_('Cancel')}}</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

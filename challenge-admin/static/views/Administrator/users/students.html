@@ -1,0 +1,15 @@
+<p>
+<form ng-submit="genExcel(false)" style="display:inline-block;">
+    <button class="btn btn-default">
+        {{user_list.ui.genexcel && 'Please wait...' || 'Download Excel'}}
+        <i ng-style="{visibility:user_list.ui.genexcel&&'visible'||'hidden'}" class="fa fa-spinner fa-spin"></i>
+    </button>
+</form>|<form ng-submit="genExcel(true)" style="display:inline-block;">
+    <button class="btn btn-default">
+        {{user_list.ui.genexcel && 'Please wait...' || 'Download Excel (Single Sheet)'}}
+        <i ng-style="{visibility:user_list.ui.genexcel&&'visible'||'hidden'}" class="fa fa-spinner fa-spin"></i>
+    </button>
+</form>
+</p>
+<p ng-show="user_list.ui.total_items" class="text-muted">About {{user_list.ui.total_items}} records.</p>
+<div ui-grid="user_list.ui.grid_opts" external-scopes="user_list.grid_scope" ui-grid-resize-columns ui-grid-infinite-scroll class="grid"></div>

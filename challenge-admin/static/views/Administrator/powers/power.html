@@ -1,0 +1,17 @@
+<div class="text-right">
+    <div class="pull-left"><h2>{{p.name}}</h2></div>
+    <button ng-click="create_mission(p)" class="btn btn-success">Create Mission Lesson</button>
+    <button ng-click="cancel()" class="btn btn-danger">Back</button>
+</div>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="m in missions">
+        <td><a ng-click="edit_mission(m)">{{m.name}}</a></td>
+    </tr>
+    </tbody>
+</table>

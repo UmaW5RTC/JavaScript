@@ -1,0 +1,20 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul side-navigation class="nav" id="side-menu">
+                {% include 'navigation/common.html' %}
+{% raw %}
+            <li ng-class="{active: $state.includes('surveys')}">
+                <a ui-sref="surveys.list"><i class="fa fa-users"></i> <span class="nav-label">Surveys</span></a>
+                <!--<ul class="nav nav-second-level" ng-class="{in: $state.includes('surveys')}">
+                    <li ui-sref-active="active"><a ui-sref="surveys.one"><i class="fa fa-file-image-o"></i> Sq</a></li>
+                </ul>-->
+            </li>
+
+{% endraw %}
+
+            {% include 'navigation/common-bottom-items.html' %}
+
+        </ul>
+
+    </div>
+</nav>

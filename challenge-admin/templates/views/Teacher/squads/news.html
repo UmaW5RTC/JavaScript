@@ -1,0 +1,14 @@
+<div>
+    <strong>{{_('Select Squad')}}:</strong> <select ng-model="ui.squad_code" ng-options="s.code as s.name for s in ui.squads_list">
+    </select>
+    <div class="pull-right">
+        <a ui-sref="squads.create_news({code:ui.squad_code})" class="btn btn-primary">{{_('Make an announcement')}}</a>
+    </div>
+    <div class="clearfix"></div>
+    <br>
+</div>
+<div class="row">
+    <div class="col-xs-12" ng-repeat="n in news_list.news">
+        <pre style="font-family:inherit;"><span class="btn-group pull-right"><a class="btn btn-success btn-sm" ui-sref="squads.edit_news({news:n})">{{_('Edit')}}</a><a class="btn btn-danger btn-sm" ng-click="delete_news(n)">{{_('Delete')}}</a></span>{{"{{n.body}}"}}</pre>
+    </div>
+</div>

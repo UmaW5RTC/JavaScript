@@ -1,0 +1,87 @@
+<p>
+    <strong>Select Class:</strong>
+    <select ng-model="ui.squad_code" ng-options="s.code as s.name for s in ui.squads_list">
+    </select>
+</p>
+<p>About {{ui.total || 0}} sticker(s)</p>
+<div ng-show="sticker" class="row">
+    <div class="squad-sticker">
+        <p class="text-center">
+            <a ng-disabled="!ui.has_prev || ui.busy" ng-click="prev()" class="btn btn-success">Previous</a>
+            <a ng-click="sticker=null" class="btn btn-primary">Back</a>
+            <a ng-disabled="!ui.has_next || ui.busy" ng-click="next()" class="btn btn-success">Next</a>
+        </p>
+        <div class="squad-sticker">
+            <div class="col-lg-6">
+                <img ng-if="sticker" ng-src="/api/download/{{sticker.path}}" class="img-responsive pull-right thumbnail">
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-lg-6 thumbnail">
+                <div class="comment">
+                    <p>
+                        <a ng-show="remove_sticker" ng-click="remove_sticker(sticker)" class="btn btn-danger">Remove from Class</a>
+                        <a ng-show="share_sticker" ng-click="share_sticker(sticker)" class="btn btn-danger">Share to Class</a>
+                        <a ng-hide="ui.nominate_box" ng-click="open_nominate(sticker)" class="btn btn-primary">Nominate for public gallery</a>
+                        <a ng-show="ui.nominate_box" ng-click="close_nominate()" class="btn btn-primary">Cancel</a>
+                        <a href="/api/download/{{sticker.path}}?att=true" class="btn btn-warning">Download</a>
+                    </p>
+
+                    <div ng-show="ui.nominate_box" class="row">
+                        <div class="col-xs-12">
+                            <form ng-submit="nominate(ui.nominate_box)">
+                                What makes this iZ HERO's sticker so special?<br>
+                                <textarea ng-model="ui.nominate_text" style="width:100%;height:400px;"></textarea>
+                                <button class="btn btn-success">Submit</button>
+                                <button type="button" ng-click="close_nominate()" class="btn btn-primary">Cancel</button>
+                            </form>
+                            <br><br>
+                        </div>
+                    </div>
+                    <p>
+                        <strong>By: </strong>{{sticker.created.username}}<br>
+                        <strong>On: </strong>{{sticker.created.on | moment_date:"YYYY-MM-DD, hh:mm a"}}<br>
+                        <strong>Likes: </strong>{{(sticker.meta.likes && sticker.meta.likes.length) || 0}}<br>
+                        <strong>Comments: </strong>{{(sticker.meta.comments && sticker.meta.comments.length) || 0}}
+                    </p>
+                </div><br><br>
+                <p class="comment" ng-repeat="comment in sticker.meta.comments">
+                    <span>{{comment.comment}}</span><br>
+                    <small><strong>By</strong>: <span class="text-success">{{comment.created.username}}</span>
+                    &bull; <strong>On</strong>: <span class="text-success">{{comment.created.on | moment_date:"YYYY-MM-DD, hh:mm a"}}</span></small>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" ng-hide="sticker">
+    <div class="col-xs-12">
+        <form ng-submit="resetData()">
+            <select ng-model="ui.filt.stage">
+                <option value="">-- Adventure --</option>
+                <option value="0">HQ</option>
+                <option value="2">Pillar of iZ RADAR</option>
+                <option value="1">Pillar of iZ EYES</option>
+                <option value="5">Pillar of iZ SHOUT</option>
+                <option value="4">Pillar of iZ PROTECT</option>
+                <option value="6">Pillar of iZ EARS</option>
+                <option value="3">Pillar of iZ CONTROL</option>
+                <option value="7">Pillar of iZ TELEPORT</option>
+            </select>
+            <select ng-model="ui.filt.mission" ng-options="s.value as s.label for s in ui.list_missions">
+                <option value="">-- Mission --</option>
+            </select>
+            <select ng-model="ui.filt.sort">
+                <option value="">Newest</option>
+                <option value="1">Oldest</option>
+            </select>
+            <button ng-disabled="ui.busy" class="btn btn-success btn-sm">View</button>
+        </form>
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 squad-stickers" ng-repeat="stker in stickers track by $index">
+        <div class="info-data">{{stker.created.username}}
+            <a ng-show="remove_sticker" ng-click="remove_sticker(stker)" class="remove"><small>Remove</small></a>
+            <a ng-show="share_sticker" ng-click="share_sticker(stker)" class="remove"><small>Share to Class</small></a>
+        </div>
+        <img ng-src="/api/download/{{stker.path}}" class="img-responsive" ng-click="open_sticker(stker, $index)">
+    </div>
+</div>

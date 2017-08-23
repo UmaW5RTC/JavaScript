@@ -1,0 +1,133 @@
+.tooltip-c {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1060;
+    display: none;
+    max-width: 300px;
+    padding: 1px;
+    font-size: 15px;
+    color: #000;
+    font-weight: normal;
+    line-height: 1.1;
+    text-align: center;
+    background-color: #ffffff;
+    -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+    border: 3px solid #222;
+    border: 3px solid rgba(0, 0, 0, 0.8);
+    border-radius: 6px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    white-space: normal;
+
+    &.top:before, &.bottom:before, &.right:before, &.left:before {
+        content:"";
+        position:absolute;
+        border-style:solid;
+        border-color:rgba(0, 0, 0, 0.8) transparent;
+        /* reduce the damage in FF3.0 */
+        display:block;
+        width:0;
+    }
+
+    &.top:after, &.bottom:after, &.right:after, &.left:after {
+        content:"";
+        position:absolute;
+        border-style:solid;
+        border-color:#fff transparent;
+        /* reduce the damage in FF3.0 */
+        display:block;
+        width:0;
+    }
+
+    .tooltip-content {
+        padding: 5px 14px;
+    }
+
+    &.top {
+        margin-top: -12px;
+
+        &:before {
+            bottom:-12px; /* value = - border-top-width - border-bottom-width */
+            left:4px; /* controls horizontal position */
+            border-width:12px 15px 0;
+            border-color:rgba(0, 0, 0, 0.8) transparent;
+        }
+
+        &:after {
+            bottom:-7px; /* value = - border-top-width - border-bottom-width */
+            left:10px; /* value = (:before left) + (:before border-left) - (:after border-left) */
+            border-width:7px 9px 0;
+        }
+    }
+
+    &.right {
+        margin-left: 12px;
+
+        &:before {
+            top:4px; /* controls vertical position */
+            bottom:auto;
+            left:-15px; /* value = - border-left-width - border-right-width */
+            border-width:10px 15px 10px 0;
+            border-color:transparent rgba(0, 0, 0, 0.8);
+        }
+        &:after {
+            top:8px; /* value = (:before top) + (:before border-top) - (:after border-top) */
+            bottom:auto;
+            left:-9px; /* value = - border-left-width - border-right-width */
+            border-width:6px 9px 6px 0;
+            border-color:transparent #fff;
+        }
+    }
+    &.bottom {
+        margin-top: 12px;
+
+        &:before {
+            top:-12px; /* value = - border-top-width - border-bottom-width */
+            bottom:auto;
+            left:auto;
+            left:4px; /* controls horizontal position */
+            border-width:0 15px 12px;
+        }
+
+        &:after {
+            top:-7px; /* value = - border-top-width - border-bottom-width */
+            bottom:auto;
+            left:auto;
+            left:10px; /* value = (:before right) + (:before border-right) - (:after border-right) */
+            border-width:0 9px 7px;
+        }
+    }
+    &.left {
+        margin-left: -12px;
+
+        &:before {
+            top:4px; /* controls vertical position */
+            bottom:auto;
+            left:auto;
+            right:-30px; /* value = - border-left-width - border-right-width */
+            border-width:10px 0 10px 15px;
+            border-color:transparent #5a8f00;
+        }
+        &:after {
+            top:8px; /* value = (:before top) + (:before border-top) - (:after border-top) */
+            bottom:auto;
+            left:auto;
+            right:-21px; /* value = - border-left-width - border-right-width */
+            border-width:6px 0 6px 9px;
+            border-color:transparent #fff;
+        }
+    }
+
+    .workaround {
+        text-align:left;
+        &:after {
+            content: " aaaaaaaaaaaaaaaaaaaaaaaa";
+            display:block;
+            visibility:hidden;
+            height:0px;
+            overflow:hidden;
+        }
+    }
+}

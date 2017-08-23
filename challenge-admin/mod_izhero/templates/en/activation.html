@@ -1,0 +1,57 @@
+<div style="max-width:500px;">
+    <p>
+        Hello {{givenname or "Teacher"}},
+    </p>
+
+
+    <p>
+        Welcome to <b style="color:#f9631c;">DQ</b> <b style="color:#4992f9;">World</b>™!
+    </p>
+
+    <p>
+        For children to thrive in our hyperconnected world it is critical that
+        they develop <b style="color:#f9631c;">DQ</b>™ (digital intelligence quotient).
+        <b style="color:#f9631c;">DQ</b> <b style="color:#4992f9;">World</b>™ is a
+        tested and proven self-learning platform for children 8-12 to learn
+        8 digital citizenship skills.  The programme is effectively delivered
+        through transmedia storytelling and gamified design, which makes learning
+        interactive and fun, and encourages a positive attitudinal shift.
+    </p>
+    <p>
+        <strong>
+            ACTIVATE - Please click activate below and login with your
+            username and temporary password to gain access to your class account.
+        </strong><br><br>
+
+        <a href="{{url_for('admin_teacher.activate', username=username, code=activationcode, lang='en', _external=True)}}"
+           style="display:inline-block;background:#f9631c;font-size:larger;text-decoration:none;color:#fff;border-radius:4px;border:none;padding:10px 20px;">
+            <strong>ACTIVATE NOW</strong>
+        </a><br><br>
+
+        Account Details<br>
+        Your activation code is: <b>{{activationcode}}</b><br>
+        Username: {{username}}<br>
+        Web URL: <a href="{{url_root}}">{{url_root}}</a>
+    </p>
+
+    <p>
+        <strong>See the Improvement.</strong> Initial results indicate a 30% reduction in
+        risky online behaviour and an increase in personal strengths such
+        as critical thinking, empathy and global citizenship.
+    </p>
+
+    <p>
+        Thank you for joining the
+        #<b style="color:#f9631c;">DQ</b><b style="color:#4992f9;">EveryChild</b>™
+        movement.
+    </p>
+
+    <p>
+        Sincerely<br>
+        <a href="{{url_root}}"><img style="width:200px;" src="{{url_root}}static/img/zones/landing/dqworld.png"></a>
+    </p>
+
+    <p>
+        <img src="{{url_root}}admin/static/img/activation/en/bottom-features.jpg">
+    </p>
+</div>

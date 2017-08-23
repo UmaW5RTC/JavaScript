@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-xs-12">
+        <form class="form-horizontal" name="admin_form">
+            <div class="form-group">
+                <label for="email" class="col-sm-4 col-md-3 col-lg-2 control-label">Email*:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <input type="email" ng-model="data.email" class="form-control" id="email" name="email" placeholder="Email (Required)" required>
+                    <div class="text-danger" ng-show="admin_form.email.$dirty && admin_form.email.$error.required">
+                        Required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name" class="col-sm-4 col-md-3 col-lg-2 control-label">Name*:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <input type="text" ng-model="data.name" class="form-control" id="name" name="name" placeholder="Name (Required)" required>
+                    <div class="text-danger" ng-show="admin_form.name.$dirty && admin_form.name.$error.required">
+                        Required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password" class="col-sm-4 col-md-3 col-lg-2 control-label">Password*:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <input type="text" ng-model="data.password" class="form-control" id="password" name="password" placeholder="Password (6 - 55 characters)">
+                    <div class="text-danger" ng-show="ui.password_req">
+                        Password must be at least 6 characters long.
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="role" class="col-sm-4 col-md-3 col-lg-2 control-label">Role:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <select ng-model="data.role" class="form-control" id="role" name="role" required>
+                        <option value="Administrator">Administrator</option>
+                        <option value="Counselor">Counselor</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button ng-click="save(data)" type="button" ng-disabled="admin_form.$invalid || ui.busy" class="btn btn-success">Submit</button>
+                    <button ng-click="cancel()" type="button" class="btn btn-danger">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

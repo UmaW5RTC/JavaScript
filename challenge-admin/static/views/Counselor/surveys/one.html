@@ -1,0 +1,100 @@
+<div class="row">
+    <div class="col-xs-12">
+        <p><a ui-sref="surveys.list">Back to list</a></p>
+    </div>
+</div>
+
+<div ng-show="survey.data.user_details" class="row">
+    <div class="col-xs-12">
+        <h2>{{survey.data.user_details.user_fullname}}</h4>
+
+        <table class="table table-striped table-bordered">
+
+        <tbody ng-show="survey.data.profile">
+            <tr ng-repeat="row in survey.data.profile">
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+            </tr>
+        </tbody>
+
+        <tbody ng-show="survey.parent_info">
+            <tr>
+                <td>Parent's Name</td>
+                <td>{{ survey.parent_info.givenname }} {{ survey.parent_info.familyname }}</td>
+            </tr>
+            <tr>
+                <td>Parent's Email</td>
+                <td>{{ survey.parent_info.email }}</td>
+            </tr>
+            <tr>
+                <td>Parent's Contact</td>
+                <td>{{ survey.parent_info.contact }}</td>
+            </tr>
+        </tbody>
+
+        <tbody ng-show="survey.data.intro">
+            <tr><th>Question</th><th>Answer</th></tr>
+            <tr ng-repeat="row in survey.data.intro">
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+<div ng-show="survey.data.pre" class="row">
+    <div class="col-xs-12">
+        <h3>Pre-Survey</h3>
+        <table class="table table-striped table-bordered">
+
+        <thead>
+            <tr><th>Question</th><th>Answer</th></tr>
+        </thead>
+
+        <tbody>
+            <tr ng-repeat="row in survey.data.pre">
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+<div ng-show="survey.data.post" class="row">
+    <div class="col-xs-12">
+        <h3>Post-Survey</h3>
+        <table class="table table-striped table-bordered">
+        <thead>
+            <tr><th>Question</th><th>Answer</th></tr>
+        </thead>
+
+        <tbody>
+            <tr ng-repeat="row in survey.data.post">
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+
+<div ng-show="survey.data.control" class="row">
+    <div class="col-xs-12">
+        <h3>Control Survey</h3>
+        <table class="table table-striped table-bordered">
+
+        <thead>
+            <tr><th>Question</th><th>Answer</th></tr>
+        </thead>
+
+        <tbody>
+            <tr ng-repeat="row in survey.data.control">
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>

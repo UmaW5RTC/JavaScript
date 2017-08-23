@@ -1,0 +1,8 @@
+*.pyc
+*~
+/cfg.py
+/.idea/
+*.orig
+*.sublime*
+/uploads/
+.DS_Store

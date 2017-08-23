@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div ng-show="ui.error">{{_('The access code you entered is invalid')}}</div>
+        <form class="form-horizontal" name="ann_form">
+            <div class="form-group">
+                <label for="accesscode" class="col-sm-4 col-md-3 col-lg-2 control-label">{{_('Access Code')}}*:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <input type="text" ng-model="data.accesscode" class="form-control" id="accesscode" name="accesscode" required>
+                    <div class="text-danger" ng-show="ann_form.accesscode.$dirty && ann_form.accesscode.$error.required">
+                        {{_('Required')}}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button ng-click="save(data)" type="button" ng-disabled="ann_form.$invalid||ui.busy" class="btn btn-success">{{_('Submit')}}</button>
+                    <a ui-sref="squads.list" type="button" class="btn btn-danger">{{_('Cancel')}}</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

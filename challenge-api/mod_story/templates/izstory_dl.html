@@ -1,0 +1,66 @@
+<html>
+<head>
+    <style>
+        body {
+            color: {{textcolor}};
+            margin: 70px;
+        }
+        .page {
+            display:block;
+            width:580px;
+            height:100%;
+            margin:auto;
+        }
+        .page-img {
+            width:580px;
+            height:580px;
+        }
+        .back-img{
+            width:310px;
+            height:310px;
+        }
+        .cover {
+            /*background-color: {{bgcolor}};*/
+        }
+        p.header {
+            font-size:2.5em;
+            text-align:center;
+            font-weight:bold;
+        }
+        p {
+            width:580px;
+            font-size:2em;
+            text-align:left;
+        }
+    </style>
+</head>
+<body>
+<div class="page cover">
+    <div class="my-izstory-page">
+        <img src="{{cover}}" alt="" class="page-img" /><br />
+        <p class="header">{{title}}</p>
+    </div>
+</div>
+<div>
+    <pdf:nextpage />
+</div>
+{% for page in pages %}
+<div>
+    <div class="page">
+        <!--<div style="background-color: {{ page['bgcolor'] }};">-->
+            <img src="{{page.image}}" class="page-img" /><br />
+            <p>{{page.caption}}</p>
+        <!--</div>-->
+    </div>
+</div>
+<div>
+    <pdf:nextpage />
+</div>
+{% endfor %}
+<div class="page cover">
+    <div style="text-align:center;">
+        <img src="/template/mstile-310x310.png" class="back-img" />
+    </div>
+</div>
+</body>
+</html>

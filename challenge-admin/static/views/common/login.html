@@ -1,0 +1,8 @@
+<form ng-controller="LoginCtrl as login" name="login_form" ng-submit="login(credentials)" novalidate>
+  <label for="email">Email:</label>
+  <input ng-model="credentials.username" type="text" name="email">
+  <label for="password">Password:</label>
+  <input type="password" id="password" ng-model="credentials.password">
+  <button ng-disable="login.busy" type="submit">Login</button>
+  <p ng-show="login.busy">Please wait...</p>
+</form>

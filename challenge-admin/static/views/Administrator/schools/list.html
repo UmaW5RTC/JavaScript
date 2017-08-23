@@ -1,0 +1,39 @@
+<p ng-show="ui.total_items" class="text-muted">About {{ui.total_items}} records.</p>
+<div class="clearfix"></div>
+<div class="row">
+    <div class="col-md-6">
+        <div ui-grid="ui.grid_opts" external-scopes="grid_scope" ui-grid-pagination class="grid"></div>
+    </div>
+    <div class="col-md-6" ng-show="ui.school">
+        <div class="row"><div class="col-xs-12"><h3>School Name: {{ui.school}}</h3></div></div>
+        <div class="row">
+            <label for="schoolname" class="col-sm-4 col-md-3 col-lg-2 control-label">Rename To:</label>
+            <div class="col-sm-8 col-md-7 col-lg-6">
+                <select ng-model="ui.selected_school" ng-options="s as s for s in ui.school_list" class="form-control" id="schoolname" name="schoolname" required>
+                </select>
+            </div>
+        </div>
+        <div class="row"><div class="col-xs-12"><h4>Classes</h4></div></div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div ui-grid="ui.grid_squad_opts" ui-grid-selection class="grid" style="height:250px;"></div>
+            </div>
+        </div>
+        <div class="row"><div class="col-xs-12"><h4>Teachers</h4></div></div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div ui-grid="ui.grid_teacher_opts" ui-grid-selection class="grid" style="height:250px;"></div>
+            </div>
+        </div>
+        <div class="row"><div class="col-xs-12"><h4>iZ HEROes</h4></div></div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div ui-grid="ui.grid_izhero_opts" ui-grid-selection class="grid" style="height:250px;"></div>
+            </div>
+        </div>
+        <div class="row"><div class="col-xs-12">
+            <br>
+            <p><button class="btn btn-success" ng-click="rename()">Save</button></p>
+        </div></div>
+    </div>
+</div>

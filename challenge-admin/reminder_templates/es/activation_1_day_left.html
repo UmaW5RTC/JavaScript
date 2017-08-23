@@ -1,0 +1,73 @@
+<div style="max-width:500px;">
+    <p>
+        Hola Padre o Madre de Familia,
+    </p>
+
+    <p>
+        La cuenta <b style="color:#f9631c;">DQ</b> <b style="color:#4992f9;">World</b>™
+        de su hijo(a) aún no ha sido activada.
+    </p>
+
+    <p>
+        Si usted desea que su hijo(a) desarrolle su inteligencia digital
+        (<b style="color:#f9631c;">DQ</b>™), por favor actívela hoy.
+        Las cuentas que no sean activadas serán borradas
+    </p>
+
+    <p>
+        <strong style="color:#f9631c;">Su código de activación es: {{activationcode}}</strong><br>
+        Por favor haga clic en el siguiente botón para activar la cuenta
+        <b style="color:#f9631c;">DQ</b> <b style="color:#4992f9;">World</b>™
+        de su hijo(a) para que pueda jugar y aprender.
+    </p>
+
+    <p style="text-align:center;">
+        <a href="{{url_root}}api/izhero/activate?username={{username}}&code={{activationcode}}&lang=es"
+           style="display:inline-block;background:#f9631c;font-size:larger;text-decoration:none;color:#fff;border-radius:4px;border:none;padding:10px 20px;">
+            <strong>ACTIVATE NOW</strong>
+        </a>
+    </p>
+
+    <p>
+        Detalles de la Cuenta<br>
+        Inicio de Cuenta <b style="color:#f9631c;">DQ</b> <b style="color:#4992f9;">World</b>™ de su Hijo(a):<br>
+        <b>
+            Login URL:
+            <a href="{{url_root}}lang:es/#!/landing/login">{{url_root}}lang:es/#!/landing/login</a>
+        </b><br>
+        <b>
+            URL de Activación:
+            <a href="{{url_root}}api/izhero/activate?username={{username}}&code={{activationcode}}&lang=es">
+                {{url_root}}lang:es/#!/landing/activate
+            </a>
+        </b><br>
+        <b>Nombre de Usuario: {{username}}</b><br>
+        <b>Ingrese éste Código de Activación: {{activationcode}}</b>
+    </p>
+
+    <p>
+        Si usted o su hijo(a) tiene dificultades al iniciar sesión en
+        <b style="color:#f9631c;">DQ</b> <b style="color:#4992f9;">World</b>™,
+        por favor póngase en contacto con nuestro Equipo de Apoyo en
+        <a href="mailto:contact@dqworld.net">contact@dqworld.net</a>.
+    </p>
+
+    <p>
+        Gracias por unirse al movimiento
+        #<b style="color:#f9631c;">DQ</b><b style="color:#4992f9;">EveryChild</b>™.
+    </p>
+
+    <p>
+        Atentamente,<br>
+        <a href="{{url_root}}"><img style="width:200px;" src="{{url_root}}static/img/zones/landing/dqworld.png"></a>
+    </p>
+
+    <small>
+        Si no se otorga el permiso de los padres dentro de 7 días de la creación de la cuenta,
+        la cuenta gratuita de su hijo(a) y toda la información asociada con ella será borrada.
+        Al activar la cuenta de su hijo(a) usted está indicando que está de acuerdo con nuestros
+        <a href="{{url_root}}lang:es/#!/doc/terms">Términos de Uso</a>
+        y
+        <a href="{{url_root}}lang:es/#!/doc/privacy">Política de Privacidad</a>.
+    </small>
+</div>

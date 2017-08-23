@@ -1,0 +1,87 @@
+<div class="row">
+    <div class="col-xs-12">
+        <form class="form-horizontal" name="mission_form">
+            <div class="form-group">
+                <label for="mission_id" class="col-sm-4 col-md-3 col-lg-2 control-label">Mission ID*:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <input type="text" ng-model="m.id" class="form-control" id="mission_id" name="mission_id" required>
+                    <div class="text-danger" ng-show="mission_form.mission_id.$dirty && mission_form.mission_id.$error.required">
+                        Required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mission_code" class="col-sm-4 col-md-3 col-lg-2 control-label">Mission Code*:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <input type="text" ng-model="m.code" class="form-control" id="mission_code" name="mission_code" required>
+                    <div class="text-danger" ng-show="mission_form.mission_code.$dirty && mission_form.mission_code.$error.required">
+                        Required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mission_name" class="col-sm-4 col-md-3 col-lg-2 control-label">Mission Name*:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <input type="text" ng-model="m.name" class="form-control" id="mission_name" name="mission_name" required>
+                    <div class="text-danger" ng-show="mission_form.mission_name.$dirty && mission_form.mission_name.$error.required">
+                        Required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mission_selcompetency" class="col-sm-4 col-md-3 col-lg-2 control-label">SEL Competency:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <select ng-model="m.selcompetency" multiple ng-options="c._id as c.name for c in competencies" class="form-control" id="mission_selcompetency" name="mission_selcompetency">
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mission_cwtopic" class="col-sm-4 col-md-3 col-lg-2 control-label">CW Topic:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <select ng-model="m.cwtopic" multiple ng-options="c._id as c.name for c in topics" class="form-control" id="mission_cwtopic" name="mission_cwtopic">
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mission_cwvalue" class="col-sm-4 col-md-3 col-lg-2 control-label">CW Values:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <select ng-model="m.cwvalue" multiple ng-options="c._id as c.name for c in values" class="form-control" id="mission_cwvalue" name="mission_cwvalue">
+                    </select>
+                </div>
+            </div>
+            <div ng-hide="ui.edit" class="form-group">
+                <label for="mission_objective" class="col-sm-4 col-md-3 col-lg-2 control-label">Learning Objective:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <textarea rows="10" id="mission_objective" name="mission_objective" ng-model="m.objective" class="form-control">
+                    </textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mission_level" class="col-sm-4 col-md-3 col-lg-2 control-label">Level:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <select ng-model="m.level" class="form-control" id="mission_level" name="mission_level">
+                        <option value="1">Easy</option>
+                        <option value="2">Intermediate</option>
+                        <option value="3">Advanced</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mission_time" class="col-sm-4 col-md-3 col-lg-2 control-label">Time:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <select ng-model="m.time" class="form-control" id="mission_time" name="mission_time">
+                        <option value="5">5 Minutes</option>
+                        <option value="10">10 Minutes</option>
+                        <option value="15">15 Minutes</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button ng-click="save(m)" type="button" ng-disabled="mission_form.$invalid" class="btn btn-success">Submit</button>
+                    <button ng-click="cancel(m)" type="button" class="btn btn-danger">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

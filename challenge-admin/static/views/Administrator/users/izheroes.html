@@ -1,0 +1,12 @@
+<form ng-submit="genExcel()">
+    <button ng-disabled="izhero_list.ui.genexcel" class="btn btn-primary">
+        {{izhero_list.ui.genexcel && 'Please wait...' || 'Download Excel'}}
+        <i ng-style="{visibility:izhero_list.ui.genexcel&&'visible'||'hidden'}" class="fa fa-spinner fa-spin"></i>
+    </button>
+</form>
+<div class="pull-right">
+    <button ng-click="deleteAccounts()" ng-disabled="izhero_list.ui.busy" class="btn btn-danger btn-sm">DELETE</button>
+</div>
+<p ng-show="izhero_list.ui.total_items" class="text-muted">About {{izhero_list.ui.total_items}} records.</p>
+<div class="clearfix"></div>
+<div style="height:860px;" ui-grid="izhero_list.ui.grid_opts" external-scopes="izhero_list.grid_scope" ui-grid-selection ui-grid-pagination ui-grid-resize-columns ui-grid-edit class="grid"></div>

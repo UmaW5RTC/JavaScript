@@ -1,0 +1,623 @@
+# Translations template for PROJECT.
+# Copyright (C) 2017 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2017-08-10 15:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: templates/layout.html:8
+msgid "Teacher"
+msgstr ""
+
+#: templates/layout.html:8
+msgid "Admin"
+msgstr ""
+
+#: templates/layout.html:8 templates/navigation/common.html:20
+msgid "iZ HERO"
+msgstr ""
+
+#: templates/register.html:7
+msgid "Register"
+msgstr ""
+
+#: templates/register.html:7
+msgid "iZ HERO Teacher"
+msgstr ""
+
+#: templates/register.html:23
+msgid "Sign Up for a Teacher Account"
+msgstr ""
+
+#: templates/register.html:66
+msgid "Username"
+msgstr ""
+
+#: templates/register.html:69
+msgid "Username is already in use. Please choose another username."
+msgstr ""
+
+#: templates/register.html:72
+msgid "No spaces allowed. Please choose another username."
+msgstr ""
+
+#: templates/register.html:75
+msgid "Username must be at least 3 characters long."
+msgstr ""
+
+#: templates/register.html:81
+msgid ""
+"Do not use your full name or anything that can identify you for your "
+"Username! Be creative."
+msgstr ""
+
+#: templates/register.html:87
+msgid "Password"
+msgstr ""
+
+#: templates/register.html:90 templates/views/Teacher/profile/detail.html:105
+msgid "Password must be at least 8 characters long."
+msgstr ""
+
+#: templates/register.html:96
+msgid ""
+"A strong, top secret password should contain big and small letters, "
+"numbers, and symbols."
+msgstr ""
+
+#: templates/register.html:102
+msgid "Type Password again"
+msgstr ""
+
+#: templates/register.html:105 templates/views/Teacher/profile/detail.html:114
+msgid "Password and confirm password do not match."
+msgstr ""
+
+#: templates/register.html:113 templates/views/Teacher/lessons/list.html:7
+#: templates/views/Teacher/profile/detail.html:24
+msgid "Name"
+msgstr ""
+
+#: templates/register.html:114 templates/views/Teacher/profile/detail.html:26
+#: templates/views/Teacher/squads/create.html:19
+msgid "Given Name"
+msgstr ""
+
+#: templates/register.html:115 templates/views/Teacher/profile/detail.html:32
+#: templates/views/Teacher/squads/create.html:22
+msgid "Family Name"
+msgstr ""
+
+#: templates/register.html:120 templates/views/Teacher/squads/create.html:28
+msgid "Email"
+msgstr ""
+
+#: templates/register.html:123
+msgid "Email is already in use. Please choose another email."
+msgstr ""
+
+#: templates/register.html:129
+msgid ""
+"We have to send an email to one of your parents before we can activate "
+"your iZ HERO ID."
+msgstr ""
+
+#: templates/register.html:135 templates/views/Teacher/profile/detail.html:61
+#: templates/views/Teacher/profile/detail.html:63
+msgid "Phone Number"
+msgstr ""
+
+#: templates/register.html:143 templates/views/Teacher/profile/detail.html:39
+msgid "Country"
+msgstr ""
+
+#: templates/register.html:145 templates/views/Teacher/profile/detail.html:42
+msgid "-- Select Country --"
+msgstr ""
+
+#: templates/register.html:151
+msgid "Where do you live?"
+msgstr ""
+
+#: templates/register.html:157 templates/views/Teacher/profile/detail.html:50
+msgid "School"
+msgstr ""
+
+#: templates/register.html:161 templates/views/Teacher/profile/detail.html:56
+msgid "School Name"
+msgstr ""
+
+#: templates/register.html:167
+msgid ""
+"Select your school name from the list. If your school name is not on the "
+"list, please select ‘others’ and type in yourself."
+msgstr ""
+
+#: templates/register.html:173
+msgid "How did you hear about us?"
+msgstr ""
+
+#: templates/register.html:176
+msgid "My Kid"
+msgstr ""
+
+#: templates/register.html:177
+msgid "My Kid’s Teacher"
+msgstr ""
+
+#: templates/register.html:178
+msgid "Friend"
+msgstr ""
+
+#: templates/register.html:179
+msgid "Press Coverage"
+msgstr ""
+
+#: templates/register.html:180
+msgid "Web Search"
+msgstr ""
+
+#: templates/register.html:181
+msgid "Social Media"
+msgstr ""
+
+#: templates/register.html:182
+msgid "Other"
+msgstr ""
+
+#: templates/register.html:189
+msgid ""
+"I have read and agreed to the iZ HERO <a href=\"/#/doc/terms\" "
+"target=\"_blank\">TERMS OF USE</a> & <a href=\"/#/doc/privacy\" "
+"target=\"_blank\">PRIVACY POLICY</a>."
+msgstr ""
+
+#: templates/register.html:191
+msgid "Please check to accept the terms and conditions to submit."
+msgstr ""
+
+#: templates/register.html:197
+#: templates/views/Teacher/anns/feedback_view.html:2
+#: templates/views/Teacher/anns/view.html:2
+#: templates/views/Teacher/lessons/competencies.html:1
+#: templates/views/Teacher/lessons/powers.html:1
+#: templates/views/Teacher/lessons/topics.html:1
+#: templates/views/Teacher/lessons/values.html:1
+#: templates/views/Teacher/profile/detail.html:121
+#: templates/views/Teacher/squads/stickers.html:11
+#: templates/views/Teacher/squads/stories.html:11
+msgid "Back"
+msgstr ""
+
+#: templates/register.html:198 templates/views/Teacher/squads/stickers.html:12
+#: templates/views/Teacher/squads/stories.html:12
+msgid "Next"
+msgstr ""
+
+#: templates/register.html:198
+msgid "Please wait..."
+msgstr ""
+
+#: templates/register.html:221
+msgid ""
+"A play & learn virtual world for kids to become smart and creative "
+"digital media HEROes!"
+msgstr ""
+
+#: templates/topnavbar.html:30 templates/views/Teacher/anns/common.html:12
+#: templates/views/Teacher/lessons/common.html:12
+#: templates/views/Teacher/profile/common.html:6
+msgid "Home"
+msgstr ""
+
+#: templates/topnavbar.html:146
+msgid "Log out"
+msgstr ""
+
+#: templates/navigation/common.html:16
+msgid "Logout"
+msgstr ""
+
+#: templates/views/Teacher/anns/common.html:15
+msgid "Inbox"
+msgstr ""
+
+#: templates/views/Teacher/anns/feedback_create.html:5
+msgid "Subject"
+msgstr ""
+
+#: templates/views/Teacher/anns/feedback_create.html:9
+#: templates/views/Teacher/profile/accesscode.html:10
+#: templates/views/Teacher/profile/detail.html:28
+#: templates/views/Teacher/profile/detail.html:34
+#: templates/views/Teacher/profile/detail.html:45
+#: templates/views/Teacher/profile/detail.html:65
+#: templates/views/Teacher/profile/detail.html:93
+#: templates/views/Teacher/profile/detail.html:102
+#: templates/views/Teacher/squads/create.html:36
+#: templates/views/Teacher/squads/create.html:48
+#: templates/views/Teacher/squads/member.html:65
+msgid "Required"
+msgstr ""
+
+#: templates/views/Teacher/anns/feedback_create.html:14
+msgid "Text"
+msgstr ""
+
+#: templates/views/Teacher/anns/feedback_create.html:22
+#: templates/views/Teacher/profile/accesscode.html:16
+#: templates/views/Teacher/profile/detail.html:77
+#: templates/views/Teacher/profile/detail.html:120
+#: templates/views/Teacher/squads/create.html:63
+#: templates/views/Teacher/squads/member.html:74
+#: templates/views/Teacher/squads/news_edit.html:21
+#: templates/views/Teacher/squads/stickers.html:34
+#: templates/views/Teacher/squads/stories.html:39
+msgid "Submit"
+msgstr ""
+
+#: templates/views/Teacher/anns/feedback_create.html:23
+#: templates/views/Teacher/profile/accesscode.html:17
+#: templates/views/Teacher/profile/detail.html:78
+#: templates/views/Teacher/squads/create.html:64
+#: templates/views/Teacher/squads/member.html:75
+#: templates/views/Teacher/squads/news_edit.html:22
+#: templates/views/Teacher/squads/stickers.html:25
+#: templates/views/Teacher/squads/stickers.html:35
+#: templates/views/Teacher/squads/stories.html:30
+#: templates/views/Teacher/squads/stories.html:40
+msgid "Cancel"
+msgstr ""
+
+#: templates/views/Teacher/anns/feedback_view.html:24
+msgid "Reply"
+msgstr ""
+
+#: templates/views/Teacher/anns/feedbacks.html:2
+#: templates/views/Teacher/anns/list.html:2
+msgid "News"
+msgstr ""
+
+#: templates/views/Teacher/anns/feedbacks.html:3
+#: templates/views/Teacher/anns/list.html:3
+msgid "Feedbacks"
+msgstr ""
+
+#: templates/views/Teacher/anns/feedbacks.html:6
+msgid "Make a Feedback"
+msgstr ""
+
+#: templates/views/Teacher/anns/view.html:7
+msgid "Published By:"
+msgstr ""
+
+#: templates/views/Teacher/lessons/common.html:9
+#: templates/views/Teacher/lessons/common.html:15
+msgid "Class Lessons"
+msgstr ""
+
+#: templates/views/Teacher/lessons/competencies.html:6
+#: templates/views/Teacher/lessons/powers.html:6
+#: templates/views/Teacher/lessons/topics.html:6
+#: templates/views/Teacher/lessons/values.html:6
+msgid "Term"
+msgstr ""
+
+#: templates/views/Teacher/lessons/competencies.html:7
+#: templates/views/Teacher/lessons/powers.html:7
+#: templates/views/Teacher/lessons/topics.html:7
+#: templates/views/Teacher/lessons/values.html:7
+msgid "Definition"
+msgstr ""
+
+#: templates/views/Teacher/lessons/list.html:6
+msgid "Code"
+msgstr ""
+
+#: templates/views/Teacher/lessons/list.html:8
+msgid "Learning Objectives"
+msgstr ""
+
+#: templates/views/Teacher/lessons/list.html:9
+msgid "Power"
+msgstr ""
+
+#: templates/views/Teacher/lessons/list.html:11
+#: templates/views/Teacher/lessons/list.html:16
+#: templates/views/Teacher/lessons/list.html:21
+#: templates/views/Teacher/lessons/list.html:26
+msgid "--ALL--"
+msgstr ""
+
+#: templates/views/Teacher/lessons/list.html:14
+msgid "SEL Competency"
+msgstr ""
+
+#: templates/views/Teacher/lessons/list.html:19
+msgid "CW Value"
+msgstr ""
+
+#: templates/views/Teacher/lessons/list.html:24
+msgid "CW Topic"
+msgstr ""
+
+#: templates/views/Teacher/lessons/list.html:29
+msgid "Level"
+msgstr ""
+
+#: templates/views/Teacher/lessons/list.html:30
+msgid "Approx. Time"
+msgstr ""
+
+#: templates/views/Teacher/profile/accesscode.html:3
+msgid "The access code you entered is invalid"
+msgstr ""
+
+#: templates/views/Teacher/profile/accesscode.html:6
+msgid "Access Code"
+msgstr ""
+
+#: templates/views/Teacher/profile/common.html:3
+msgid "My Profile"
+msgstr ""
+
+#: templates/views/Teacher/profile/common.html:9
+msgid "Profile"
+msgstr ""
+
+#: templates/views/Teacher/profile/detail.html:72
+msgid "Change Password"
+msgstr ""
+
+#: templates/views/Teacher/profile/detail.html:89
+#: templates/views/Teacher/profile/detail.html:91
+msgid "Current Password"
+msgstr ""
+
+#: templates/views/Teacher/profile/detail.html:98
+#: templates/views/Teacher/profile/detail.html:100
+msgid "New Password"
+msgstr ""
+
+#: templates/views/Teacher/profile/detail.html:110
+#: templates/views/Teacher/profile/detail.html:112
+msgid "Confirm New Password"
+msgstr ""
+
+#: templates/views/Teacher/squads/common.html:9
+msgid "My Classes"
+msgstr ""
+
+#: templates/views/Teacher/squads/create.html:17
+msgid "Name of Teacher"
+msgstr ""
+
+#: templates/views/Teacher/squads/create.html:26
+msgid "Teacher’s Email"
+msgstr ""
+
+#: templates/views/Teacher/squads/create.html:32
+msgid "Class Name"
+msgstr ""
+
+#: templates/views/Teacher/squads/create.html:34
+msgid "Enter a name for your class (Required)"
+msgstr ""
+
+#: templates/views/Teacher/squads/create.html:39
+msgid ""
+"The squad name is already in use. Please choose another name for your "
+"squad."
+msgstr ""
+
+#: templates/views/Teacher/squads/create.html:44
+msgid "Grade"
+msgstr ""
+
+#: templates/views/Teacher/squads/create.html:46
+msgid "Grade (ex) P1"
+msgstr ""
+
+#: templates/views/Teacher/squads/create.html:53
+msgid "No. of student accounts"
+msgstr ""
+
+#: templates/views/Teacher/squads/create.html:57
+#: templates/views/Teacher/squads/member.html:68
+msgid "Must be a number"
+msgstr ""
+
+#: templates/views/Teacher/squads/list.html:46
+msgid "About {{squad_list.ui.total_items}} records."
+msgstr ""
+
+#: templates/views/Teacher/squads/member.html:56
+msgid "Generate Student Accounts"
+msgstr ""
+
+#: templates/views/Teacher/squads/member.html:61
+msgid "Additional no. of student accounts"
+msgstr ""
+
+#: templates/views/Teacher/squads/members.html:2
+#: templates/views/Teacher/squads/stories.html:2
+msgid "Select Class"
+msgstr ""
+
+#: templates/views/Teacher/squads/members.html:13
+msgid "About {{member_list.ui.total_items}} records."
+msgstr ""
+
+#: templates/views/Teacher/squads/members.html:21
+msgid ""
+"Distribute individual Username and Passwords (PW) to your students. When "
+"they log in, they will be asked to change their usernames and passwords."
+msgstr ""
+
+#: templates/views/Teacher/squads/members.html:22
+msgid "Ok"
+msgstr ""
+
+#: templates/views/Teacher/squads/news.html:2
+msgid "Select Squad"
+msgstr ""
+
+#: templates/views/Teacher/squads/news.html:5
+msgid "Make an announcement"
+msgstr ""
+
+#: templates/views/Teacher/squads/news.html:12
+msgid "Edit"
+msgstr ""
+
+#: templates/views/Teacher/squads/news.html:12
+msgid "Delete"
+msgstr ""
+
+#: templates/views/Teacher/squads/news_edit.html:8
+msgid "-- ALL --"
+msgstr ""
+
+#: templates/views/Teacher/squads/news_edit.html:14
+msgid "Make an announcement to your class"
+msgstr ""
+
+#: templates/views/Teacher/squads/stickers.html:2
+msgid "Select Squad:"
+msgstr ""
+
+#: templates/views/Teacher/squads/stickers.html:6
+#: templates/views/Teacher/squads/stories.html:6
+msgid "About {{ui.total || 0}} sticker(s)"
+msgstr ""
+
+#: templates/views/Teacher/squads/stickers.html:10
+#: templates/views/Teacher/squads/stories.html:10
+msgid "Previous"
+msgstr ""
+
+#: templates/views/Teacher/squads/stickers.html:22
+msgid "Remove from Squad"
+msgstr ""
+
+#: templates/views/Teacher/squads/stickers.html:23
+#: templates/views/Teacher/squads/stickers.html:83
+msgid "Share to Squad"
+msgstr ""
+
+#: templates/views/Teacher/squads/stickers.html:24
+#: templates/views/Teacher/squads/stories.html:29
+msgid "Nominate for public gallery"
+msgstr ""
+
+#: templates/views/Teacher/squads/stickers.html:26
+#: templates/views/Teacher/squads/stories.html:31
+msgid "Download"
+msgstr ""
+
+#: templates/views/Teacher/squads/stickers.html:32
+msgid "What makes this iZ HERO’s sticker so special?"
+msgstr ""
+
+#: templates/views/Teacher/squads/stickers.html:49
+#: templates/views/Teacher/squads/stories.html:46
+#: templates/views/Teacher/squads/stories.html:54
+msgid "By"
+msgstr ""
+
+#: templates/views/Teacher/squads/stickers.html:50
+#: templates/views/Teacher/squads/stories.html:47
+#: templates/views/Teacher/squads/stories.html:55
+msgid "On"
+msgstr ""
+
+#: templates/views/Teacher/squads/stickers.html:60
+msgid "-- Adventure --"
+msgstr ""
+
+#: templates/views/Teacher/squads/stickers.html:61
+msgid "HQ"
+msgstr ""
+
+#: templates/views/Teacher/squads/stickers.html:62
+msgid "Pillar of iZ RADAR"
+msgstr ""
+
+#: templates/views/Teacher/squads/stickers.html:63
+msgid "Pillar of iZ EYES"
+msgstr ""
+
+#: templates/views/Teacher/squads/stickers.html:64
+msgid "Pillar of iZ SHOUT"
+msgstr ""
+
+#: templates/views/Teacher/squads/stickers.html:65
+msgid "Pillar of iZ PROTECT"
+msgstr ""
+
+#: templates/views/Teacher/squads/stickers.html:66
+msgid "Pillar of iZ EARS"
+msgstr ""
+
+#: templates/views/Teacher/squads/stickers.html:67
+msgid "Pillar of iZ CONTROL"
+msgstr ""
+
+#: templates/views/Teacher/squads/stickers.html:68
+msgid "Pillar of iZ TELEPORT"
+msgstr ""
+
+#: templates/views/Teacher/squads/stickers.html:71
+msgid "-- Mission --"
+msgstr ""
+
+#: templates/views/Teacher/squads/stickers.html:74
+msgid "Newest"
+msgstr ""
+
+#: templates/views/Teacher/squads/stickers.html:75
+msgid "Oldest"
+msgstr ""
+
+#: templates/views/Teacher/squads/stickers.html:77
+msgid "View"
+msgstr ""
+
+#: templates/views/Teacher/squads/stickers.html:82
+#: templates/views/Teacher/squads/stories.html:62
+msgid "Remove"
+msgstr ""
+
+#: templates/views/Teacher/squads/stories.html:27
+msgid "Remove from Class"
+msgstr ""
+
+#: templates/views/Teacher/squads/stories.html:28
+#: templates/views/Teacher/squads/stories.html:63
+msgid "Share to Class"
+msgstr ""
+
+#: templates/views/Teacher/squads/stories.html:37
+msgid "What makes this iZ HERO’s iZ STORY so special?"
+msgstr ""
+
+#: templates/views/Teacher/squads/stories.html:48
+msgid "Likes"
+msgstr ""
+
+#: templates/views/Teacher/squads/stories.html:49
+msgid "Comments"
+msgstr ""
+

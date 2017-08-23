@@ -1,0 +1,798 @@
+# Korean translations for PROJECT.
+# Copyright (C) 2015 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2017-08-10 15:52+0800\n"
+"PO-Revision-Date: 2015-10-22 23:46+0800\n"
+"Last-Translator: \n"
+"Language: ko\n"
+"Language-Team: ko <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.4.0\n"
+
+#: templates/layout.html:8
+msgid "Teacher"
+msgstr "교사"
+
+#: templates/layout.html:8
+msgid "Admin"
+msgstr "어드민"
+
+#: templates/layout.html:8 templates/navigation/common.html:20
+msgid "iZ HERO"
+msgstr "iZ HERO"
+
+#: templates/register.html:7
+msgid "Register"
+msgstr "등록"
+
+#: templates/register.html:7
+msgid "iZ HERO Teacher"
+msgstr "iZ HERO 선생님"
+
+#: templates/register.html:23
+msgid "Sign Up for a Teacher Account"
+msgstr "선생님 계정으로 가입하기"
+
+#: templates/register.html:66
+msgid "Username"
+msgstr "사용자 아이디"
+
+#: templates/register.html:69
+msgid "Username is already in use. Please choose another username."
+msgstr "입력하신 사용자 아이디는 이미 사용 중입니다. 다른 사용자 아이디를 선택해주세요."
+
+#: templates/register.html:72
+msgid "No spaces allowed. Please choose another username."
+msgstr "공백은 허용되지 않습니다. 사용자 아이디를 다시 설정해주세요."
+
+#: templates/register.html:75
+msgid "Username must be at least 3 characters long."
+msgstr "사용자 아이디는 최소 3자 이상이어야 합니다."
+
+#: templates/register.html:81
+msgid ""
+"Do not use your full name or anything that can identify you for your "
+"Username! Be creative."
+msgstr ""
+
+#: templates/register.html:87
+msgid "Password"
+msgstr "비밀번호"
+
+#: templates/register.html:90 templates/views/Teacher/profile/detail.html:105
+msgid "Password must be at least 8 characters long."
+msgstr "비밀번호는 최소 8글자 이상이어야 합니다."
+
+#: templates/register.html:96
+msgid ""
+"A strong, top secret password should contain big and small letters, "
+"numbers, and symbols."
+msgstr ""
+
+#: templates/register.html:102
+msgid "Type Password again"
+msgstr ""
+
+#: templates/register.html:105 templates/views/Teacher/profile/detail.html:114
+msgid "Password and confirm password do not match."
+msgstr "비밀번호와 비밀번호 확인이 일치하지 않습니다."
+
+#: templates/register.html:113 templates/views/Teacher/lessons/list.html:7
+#: templates/views/Teacher/profile/detail.html:24
+msgid "Name"
+msgstr "이름"
+
+#: templates/register.html:114 templates/views/Teacher/profile/detail.html:26
+#: templates/views/Teacher/squads/create.html:19
+msgid "Given Name"
+msgstr "이름"
+
+#: templates/register.html:115 templates/views/Teacher/profile/detail.html:32
+#: templates/views/Teacher/squads/create.html:22
+msgid "Family Name"
+msgstr "성"
+
+#: templates/register.html:120 templates/views/Teacher/squads/create.html:28
+msgid "Email"
+msgstr "이메일"
+
+#: templates/register.html:123
+msgid "Email is already in use. Please choose another email."
+msgstr "이미 사용중인 이메일입니다. 다른 메일을 사용해주세요."
+
+#: templates/register.html:129
+msgid ""
+"We have to send an email to one of your parents before we can activate "
+"your iZ HERO ID."
+msgstr ""
+
+#: templates/register.html:135 templates/views/Teacher/profile/detail.html:61
+#: templates/views/Teacher/profile/detail.html:63
+msgid "Phone Number"
+msgstr "전화번호"
+
+#: templates/register.html:143 templates/views/Teacher/profile/detail.html:39
+msgid "Country"
+msgstr "거주국가"
+
+#: templates/register.html:145 templates/views/Teacher/profile/detail.html:42
+msgid "-- Select Country --"
+msgstr "국가 선택"
+
+#: templates/register.html:151
+msgid "Where do you live?"
+msgstr ""
+
+#: templates/register.html:157 templates/views/Teacher/profile/detail.html:50
+msgid "School"
+msgstr "학교"
+
+#: templates/register.html:161 templates/views/Teacher/profile/detail.html:56
+msgid "School Name"
+msgstr "학교명"
+
+#: templates/register.html:167
+msgid ""
+"Select your school name from the list. If your school name is not on the "
+"list, please select ‘others’ and type in yourself."
+msgstr ""
+
+#: templates/register.html:173
+msgid "How did you hear about us?"
+msgstr ""
+
+#: templates/register.html:176
+msgid "My Kid"
+msgstr ""
+
+#: templates/register.html:177
+msgid "My Kid’s Teacher"
+msgstr ""
+
+#: templates/register.html:178
+msgid "Friend"
+msgstr ""
+
+#: templates/register.html:179
+msgid "Press Coverage"
+msgstr ""
+
+#: templates/register.html:180
+msgid "Web Search"
+msgstr ""
+
+#: templates/register.html:181
+msgid "Social Media"
+msgstr ""
+
+#: templates/register.html:182
+msgid "Other"
+msgstr ""
+
+#: templates/register.html:189
+msgid ""
+"I have read and agreed to the iZ HERO <a href=\"/#/doc/terms\" "
+"target=\"_blank\">TERMS OF USE</a> & <a href=\"/#/doc/privacy\" "
+"target=\"_blank\">PRIVACY POLICY</a>."
+msgstr "나는 iZ HERO의 이용약관과 개인 정보 보호 정책을 읽었고 동의합니다."
+
+#: templates/register.html:191
+msgid "Please check to accept the terms and conditions to submit."
+msgstr "이용약관을 확인해주세요."
+
+#: templates/register.html:197
+#: templates/views/Teacher/anns/feedback_view.html:2
+#: templates/views/Teacher/anns/view.html:2
+#: templates/views/Teacher/lessons/competencies.html:1
+#: templates/views/Teacher/lessons/powers.html:1
+#: templates/views/Teacher/lessons/topics.html:1
+#: templates/views/Teacher/lessons/values.html:1
+#: templates/views/Teacher/profile/detail.html:121
+#: templates/views/Teacher/squads/stickers.html:11
+#: templates/views/Teacher/squads/stories.html:11
+msgid "Back"
+msgstr "뒤로"
+
+#: templates/register.html:198 templates/views/Teacher/squads/stickers.html:12
+#: templates/views/Teacher/squads/stories.html:12
+msgid "Next"
+msgstr "다음"
+
+#: templates/register.html:198
+msgid "Please wait..."
+msgstr ""
+
+#: templates/register.html:221
+msgid ""
+"A play & learn virtual world for kids to become smart and creative "
+"digital media HEROes!"
+msgstr "어린이들을 신중하고 창의적으로 디지털 미디어를 사용하는 영웅으로 만드는 온라인 게임/학습 세상"
+
+#: templates/topnavbar.html:30 templates/views/Teacher/anns/common.html:12
+#: templates/views/Teacher/lessons/common.html:12
+#: templates/views/Teacher/profile/common.html:6
+msgid "Home"
+msgstr "홈으로"
+
+#: templates/topnavbar.html:146
+msgid "Log out"
+msgstr "로그아웃"
+
+#: templates/navigation/common.html:16
+msgid "Logout"
+msgstr "로그아웃"
+
+#: templates/views/Teacher/anns/common.html:15
+msgid "Inbox"
+msgstr "쪽지함"
+
+#: templates/views/Teacher/anns/feedback_create.html:5
+msgid "Subject"
+msgstr "주제"
+
+#: templates/views/Teacher/anns/feedback_create.html:9
+#: templates/views/Teacher/profile/accesscode.html:10
+#: templates/views/Teacher/profile/detail.html:28
+#: templates/views/Teacher/profile/detail.html:34
+#: templates/views/Teacher/profile/detail.html:45
+#: templates/views/Teacher/profile/detail.html:65
+#: templates/views/Teacher/profile/detail.html:93
+#: templates/views/Teacher/profile/detail.html:102
+#: templates/views/Teacher/squads/create.html:36
+#: templates/views/Teacher/squads/create.html:48
+#: templates/views/Teacher/squads/member.html:65
+msgid "Required"
+msgstr "필수 입력 사항"
+
+#: templates/views/Teacher/anns/feedback_create.html:14
+msgid "Text"
+msgstr "본문"
+
+#: templates/views/Teacher/anns/feedback_create.html:22
+#: templates/views/Teacher/profile/accesscode.html:16
+#: templates/views/Teacher/profile/detail.html:77
+#: templates/views/Teacher/profile/detail.html:120
+#: templates/views/Teacher/squads/create.html:63
+#: templates/views/Teacher/squads/member.html:74
+#: templates/views/Teacher/squads/news_edit.html:21
+#: templates/views/Teacher/squads/stickers.html:34
+#: templates/views/Teacher/squads/stories.html:39
+msgid "Submit"
+msgstr "확인"
+
+#: templates/views/Teacher/anns/feedback_create.html:23
+#: templates/views/Teacher/profile/accesscode.html:17
+#: templates/views/Teacher/profile/detail.html:78
+#: templates/views/Teacher/squads/create.html:64
+#: templates/views/Teacher/squads/member.html:75
+#: templates/views/Teacher/squads/news_edit.html:22
+#: templates/views/Teacher/squads/stickers.html:25
+#: templates/views/Teacher/squads/stickers.html:35
+#: templates/views/Teacher/squads/stories.html:30
+#: templates/views/Teacher/squads/stories.html:40
+msgid "Cancel"
+msgstr "취소"
+
+#: templates/views/Teacher/anns/feedback_view.html:24
+msgid "Reply"
+msgstr "댓글"
+
+#: templates/views/Teacher/anns/feedbacks.html:2
+#: templates/views/Teacher/anns/list.html:2
+msgid "News"
+msgstr "뉴스"
+
+#: templates/views/Teacher/anns/feedbacks.html:3
+#: templates/views/Teacher/anns/list.html:3
+msgid "Feedbacks"
+msgstr "피드백"
+
+#: templates/views/Teacher/anns/feedbacks.html:6
+msgid "Make a Feedback"
+msgstr "피드백 작성하기"
+
+#: templates/views/Teacher/anns/view.html:7
+msgid "Published By:"
+msgstr "게시자:"
+
+#: templates/views/Teacher/lessons/common.html:9
+#: templates/views/Teacher/lessons/common.html:15
+msgid "Class Lessons"
+msgstr "학급 수업"
+
+#: templates/views/Teacher/lessons/competencies.html:6
+#: templates/views/Teacher/lessons/powers.html:6
+#: templates/views/Teacher/lessons/topics.html:6
+#: templates/views/Teacher/lessons/values.html:6
+msgid "Term"
+msgstr "용어"
+
+#: templates/views/Teacher/lessons/competencies.html:7
+#: templates/views/Teacher/lessons/powers.html:7
+#: templates/views/Teacher/lessons/topics.html:7
+#: templates/views/Teacher/lessons/values.html:7
+msgid "Definition"
+msgstr "정의"
+
+#: templates/views/Teacher/lessons/list.html:6
+msgid "Code"
+msgstr "인증코드"
+
+#: templates/views/Teacher/lessons/list.html:8
+msgid "Learning Objectives"
+msgstr "학습 목표"
+
+#: templates/views/Teacher/lessons/list.html:9
+msgid "Power"
+msgstr "파워"
+
+#: templates/views/Teacher/lessons/list.html:11
+#: templates/views/Teacher/lessons/list.html:16
+#: templates/views/Teacher/lessons/list.html:21
+#: templates/views/Teacher/lessons/list.html:26
+msgid "--ALL--"
+msgstr "-- 모두 --"
+
+#: templates/views/Teacher/lessons/list.html:14
+msgid "SEL Competency"
+msgstr "사회정서학습 역량"
+
+#: templates/views/Teacher/lessons/list.html:19
+msgid "CW Value"
+msgstr "사이버 건전성 학습가치"
+
+#: templates/views/Teacher/lessons/list.html:24
+msgid "CW Topic"
+msgstr "사이버 건전성 주제"
+
+#: templates/views/Teacher/lessons/list.html:29
+msgid "Level"
+msgstr "레벨"
+
+#: templates/views/Teacher/lessons/list.html:30
+msgid "Approx. Time"
+msgstr "소요시간"
+
+#: templates/views/Teacher/profile/accesscode.html:3
+msgid "The access code you entered is invalid"
+msgstr ""
+
+#: templates/views/Teacher/profile/accesscode.html:6
+msgid "Access Code"
+msgstr ""
+
+#: templates/views/Teacher/profile/common.html:3
+msgid "My Profile"
+msgstr "개인정보"
+
+#: templates/views/Teacher/profile/common.html:9
+msgid "Profile"
+msgstr "프로필"
+
+#: templates/views/Teacher/profile/detail.html:72
+msgid "Change Password"
+msgstr "비밀번호 변경"
+
+#: templates/views/Teacher/profile/detail.html:89
+#: templates/views/Teacher/profile/detail.html:91
+msgid "Current Password"
+msgstr "기존 비밀번호"
+
+#: templates/views/Teacher/profile/detail.html:98
+#: templates/views/Teacher/profile/detail.html:100
+msgid "New Password"
+msgstr "새 비밀번호"
+
+#: templates/views/Teacher/profile/detail.html:110
+#: templates/views/Teacher/profile/detail.html:112
+msgid "Confirm New Password"
+msgstr "새 비밀번호 확인"
+
+#: templates/views/Teacher/squads/common.html:9
+msgid "My Classes"
+msgstr ""
+
+#: templates/views/Teacher/squads/create.html:17
+msgid "Name of Teacher"
+msgstr ""
+
+#: templates/views/Teacher/squads/create.html:26
+msgid "Teacher’s Email"
+msgstr ""
+
+#: templates/views/Teacher/squads/create.html:32
+msgid "Class Name"
+msgstr ""
+
+#: templates/views/Teacher/squads/create.html:34
+msgid "Enter a name for your class (Required)"
+msgstr "수업 이름을 입력해주세요. (필수)"
+
+#: templates/views/Teacher/squads/create.html:39
+msgid ""
+"The squad name is already in use. Please choose another name for your "
+"squad."
+msgstr "입력하신 스쿼드 이름은 이미 사용 중입니다. 스쿼드에게 다른 이름을 지어주세요."
+
+#: templates/views/Teacher/squads/create.html:44
+msgid "Grade"
+msgstr "학년"
+
+#: templates/views/Teacher/squads/create.html:46
+msgid "Grade (ex) P1"
+msgstr "학년 (예) 초등학교 1학년"
+
+#: templates/views/Teacher/squads/create.html:53
+msgid "No. of student accounts"
+msgstr "학생 계정수 (명)"
+
+#: templates/views/Teacher/squads/create.html:57
+#: templates/views/Teacher/squads/member.html:68
+msgid "Must be a number"
+msgstr "숫자를 입력해야 합니다."
+
+#: templates/views/Teacher/squads/list.html:46
+msgid "About {{squad_list.ui.total_items}} records."
+msgstr "스티커 {{squad_list.ui.total_items}}개"
+
+#: templates/views/Teacher/squads/member.html:56
+msgid "Generate Student Accounts"
+msgstr ""
+
+#: templates/views/Teacher/squads/member.html:61
+msgid "Additional no. of student accounts"
+msgstr "추가할 학생 계정 수"
+
+#: templates/views/Teacher/squads/members.html:2
+#: templates/views/Teacher/squads/stories.html:2
+msgid "Select Class"
+msgstr ""
+
+#: templates/views/Teacher/squads/members.html:13
+msgid "About {{member_list.ui.total_items}} records."
+msgstr "스티커 {{member_list.ui.total_items}}개"
+
+#: templates/views/Teacher/squads/members.html:21
+msgid ""
+"Distribute individual Username and Passwords (PW) to your students. When "
+"they log in, they will be asked to change their usernames and passwords."
+msgstr ""
+"학생들에게 개별적으로 부여된 사용자아이디와 패스워드를 나눠주세요. 학생들이 부여받은 아이디로 로그인하면, 사용자아이디와 패스워드를 "
+"바꿀 수 있습니다."
+
+#: templates/views/Teacher/squads/members.html:22
+msgid "Ok"
+msgstr "확인"
+
+#: templates/views/Teacher/squads/news.html:2
+msgid "Select Squad"
+msgstr "스쿼 선택하기"
+
+#: templates/views/Teacher/squads/news.html:5
+msgid "Make an announcement"
+msgstr "공지하기"
+
+#: templates/views/Teacher/squads/news.html:12
+msgid "Edit"
+msgstr "수정"
+
+#: templates/views/Teacher/squads/news.html:12
+msgid "Delete"
+msgstr "삭제"
+
+#: templates/views/Teacher/squads/news_edit.html:8
+msgid "-- ALL --"
+msgstr "-- 모두 --"
+
+#: templates/views/Teacher/squads/news_edit.html:14
+msgid "Make an announcement to your class"
+msgstr "학급에 공지하기"
+
+#: templates/views/Teacher/squads/stickers.html:2
+msgid "Select Squad:"
+msgstr "스쿼드 선택:"
+
+#: templates/views/Teacher/squads/stickers.html:6
+#: templates/views/Teacher/squads/stories.html:6
+msgid "About {{ui.total || 0}} sticker(s)"
+msgstr "스티커 {{ui.total || 0}}개"
+
+#: templates/views/Teacher/squads/stickers.html:10
+#: templates/views/Teacher/squads/stories.html:10
+msgid "Previous"
+msgstr "이전으로"
+
+#: templates/views/Teacher/squads/stickers.html:22
+msgid "Remove from Squad"
+msgstr "스쿼드에서 삭제하기"
+
+#: templates/views/Teacher/squads/stickers.html:23
+#: templates/views/Teacher/squads/stickers.html:83
+msgid "Share to Squad"
+msgstr "iZ 스쿼드에 게시하기"
+
+#: templates/views/Teacher/squads/stickers.html:24
+#: templates/views/Teacher/squads/stories.html:29
+msgid "Nominate for public gallery"
+msgstr "iZ 갤러리에 추천하기"
+
+#: templates/views/Teacher/squads/stickers.html:26
+#: templates/views/Teacher/squads/stories.html:31
+msgid "Download"
+msgstr "다운로드"
+
+#: templates/views/Teacher/squads/stickers.html:32
+msgid "What makes this iZ HERO’s sticker so special?"
+msgstr "이 iZ HERO 스티커가 특별한 이유는 무엇인가요?"
+
+#: templates/views/Teacher/squads/stickers.html:49
+#: templates/views/Teacher/squads/stories.html:46
+#: templates/views/Teacher/squads/stories.html:54
+msgid "By"
+msgstr "작성자"
+
+#: templates/views/Teacher/squads/stickers.html:50
+#: templates/views/Teacher/squads/stories.html:47
+#: templates/views/Teacher/squads/stories.html:55
+msgid "On"
+msgstr "게시일"
+
+#: templates/views/Teacher/squads/stickers.html:60
+msgid "-- Adventure --"
+msgstr "-- 어드벤처 --"
+
+#: templates/views/Teacher/squads/stickers.html:61
+msgid "HQ"
+msgstr "본부"
+
+#: templates/views/Teacher/squads/stickers.html:62
+msgid "Pillar of iZ RADAR"
+msgstr "iZ 레이더 기둥"
+
+#: templates/views/Teacher/squads/stickers.html:63
+msgid "Pillar of iZ EYES"
+msgstr "iZ 아이즈 기둥"
+
+#: templates/views/Teacher/squads/stickers.html:64
+msgid "Pillar of iZ SHOUT"
+msgstr "iZ 샤우트 기둥"
+
+#: templates/views/Teacher/squads/stickers.html:65
+msgid "Pillar of iZ PROTECT"
+msgstr "iZ 프로텍트 기둥"
+
+#: templates/views/Teacher/squads/stickers.html:66
+msgid "Pillar of iZ EARS"
+msgstr "iZ 이얼즈 기둥"
+
+#: templates/views/Teacher/squads/stickers.html:67
+msgid "Pillar of iZ CONTROL"
+msgstr "iZ 컨트롤 기둥"
+
+#: templates/views/Teacher/squads/stickers.html:68
+msgid "Pillar of iZ TELEPORT"
+msgstr "iZ 텔레포트 기둥"
+
+#: templates/views/Teacher/squads/stickers.html:71
+msgid "-- Mission --"
+msgstr "-- 특명 --"
+
+#: templates/views/Teacher/squads/stickers.html:74
+msgid "Newest"
+msgstr "최신순"
+
+#: templates/views/Teacher/squads/stickers.html:75
+msgid "Oldest"
+msgstr "오래된 순"
+
+#: templates/views/Teacher/squads/stickers.html:77
+msgid "View"
+msgstr "보기"
+
+#: templates/views/Teacher/squads/stickers.html:82
+#: templates/views/Teacher/squads/stories.html:62
+msgid "Remove"
+msgstr "삭제"
+
+#: templates/views/Teacher/squads/stories.html:27
+msgid "Remove from Class"
+msgstr ""
+
+#: templates/views/Teacher/squads/stories.html:28
+#: templates/views/Teacher/squads/stories.html:63
+msgid "Share to Class"
+msgstr ""
+
+#: templates/views/Teacher/squads/stories.html:37
+msgid "What makes this iZ HERO’s iZ STORY so special?"
+msgstr "나의 iZ HERO 스토리가 특별한 이유가 무엇인가요?"
+
+#: templates/views/Teacher/squads/stories.html:48
+msgid "Likes"
+msgstr "좋아요"
+
+#: templates/views/Teacher/squads/stories.html:49
+msgid "Comments"
+msgstr "댓글"
+
+#~ msgid ""
+#~ "Provide us with your information so "
+#~ "that we can create a safe and "
+#~ "fun digital environment for our kids "
+#~ "together!"
+#~ msgstr "어린이들을 위한 안전하고 재미있는 디지털 환경을 만들기 위해 부모님의 정보가 필요합니다. 아래 정보를 입력하여 주세요."
+
+#~ msgid "Confirm Password"
+#~ msgstr "비밀번호 확인"
+
+#~ msgid "Retype your password"
+#~ msgstr "비밀번호를 다시 입력해주세요."
+
+#~ msgid "Go to iZHERO.net"
+#~ msgstr "iZHERO.net 바로가기"
+
+#~ msgid "Feedback"
+#~ msgstr "평가"
+
+#~ msgid "My iZ SQUADS"
+#~ msgstr "나의 iZ 스쿼드"
+
+#~ msgid "View all class accounts."
+#~ msgstr "모든 학급 계정 보기"
+
+#~ msgid "All Members"
+#~ msgstr "모든 회원 보기"
+
+#~ msgid "View all student accounts."
+#~ msgstr "모든 학생 계정 보기"
+
+#~ msgid "Squad Work"
+#~ msgstr "스쿼드 활동"
+
+#~ msgid "View your class’ work."
+#~ msgstr "해당 학급 활동 보기"
+
+#~ msgid "Squad Stickers"
+#~ msgstr "스쿼드 스티커"
+
+#~ msgid "View your class’ stickers."
+#~ msgstr "해당 학급 스티커 보기"
+
+#~ msgid "Removed Stickers"
+#~ msgstr "버린 스티커"
+
+#~ msgid "View your class’ removed stickers."
+#~ msgstr "버린 학급 스티커 보기"
+
+#~ msgid "Squad Stories"
+#~ msgstr "스쿼드 스토리"
+
+#~ msgid "View your class’ storybooks."
+#~ msgstr "학급 스토리북 보기"
+
+#~ msgid "Removed Stories"
+#~ msgstr "버린 스토리"
+
+#~ msgid "View your class’ removed storybooks."
+#~ msgstr "버린 학급 스토리북 보기"
+
+#~ msgid "Announcements"
+#~ msgstr "공지사항"
+
+#~ msgid "Make an announcement to your class(es)."
+#~ msgstr "학급에 공지하기"
+
+#~ msgid "View class lessons on cyber wellness by topics."
+#~ msgstr "주제별 사이버 건전성 수업 보기"
+
+#~ msgid "iZ MISSION TV"
+#~ msgstr "iZ 미션 TV"
+
+#~ msgid "30-45 seconds animated cyber wellness clips to show your class."
+#~ msgstr "학급의 학생을 대상으로 하는 사이버 건전성에 관한 30~45초 애니메이션 동영상"
+
+#~ msgid "Book Free Events"
+#~ msgstr "무료 이벤트 예약"
+
+#~ msgid "Book iZ HERO events for your school."
+#~ msgstr "학교 대상의 iZ 히어로 이벤트를 예약하세요!"
+
+#~ msgid "Free Assembly Programme"
+#~ msgstr "무료 단체 프로그램"
+
+#~ msgid ""
+#~ "Book an iZ HERO 30-minute assembly "
+#~ "programme and/or Mobile School Booth for"
+#~ " your entire school."
+#~ msgstr "30분 짜리 단체 프로그램과 학교 전체를 위한 모바일 스쿨 부스를 예약하세요!"
+
+#~ msgid "Free Teacher’s Workshops"
+#~ msgstr "무료 교사 워크샵"
+
+#~ msgid ""
+#~ "Book a teachers’ workshops for you "
+#~ "and your colleagues to learn how "
+#~ "to use the iZHERO.net platform."
+#~ msgstr "동료 선생님들과 함께 iZHERO.net 플랫폼 사용 방법을 배우기 위한 워크샵을 예약하세요."
+
+#~ msgid "-- Select School (Required) --"
+#~ msgstr "-- 학교 선택하기 (필수) --"
+
+#~ msgid "Type your school name."
+#~ msgstr "학교 이름을 입력하세요."
+
+#~ msgid "iZ SQUAD Name"
+#~ msgstr "iZ 대원 이름"
+
+#~ msgid "Create a new iZ SQUAD"
+#~ msgstr "새로운 iZ 스쿼드를 만들기"
+
+#~ msgid "Create an account for your class."
+#~ msgstr "학급 계정을 만들기"
+
+#~ msgid "Click to create an account for your class."
+#~ msgstr "학급 계정 만들기"
+
+#~ msgid "Later"
+#~ msgstr "나중에 하기"
+
+#~ msgid "Generate Member Accounts"
+#~ msgstr "학생 계정 생성하기"
+
+#~ msgid "Add Member"
+#~ msgstr "멤버 "
+
+#~ msgid "View Stickers"
+#~ msgstr "스티커 보기"
+
+#~ msgid "View iZ STORY"
+#~ msgstr "iZ 스토리 보기"
+
+#~ msgid "Make an Announcement"
+#~ msgstr "공지하기"
+
+#~ msgid "Congratulations!"
+#~ msgstr "축하합니다!"
+
+#~ msgid "You have created an iZ SQUAD account for your class."
+#~ msgstr "iZ 스쿼드 계정이 생성되었습니다."
+
+#~ msgid ""
+#~ "Your students’ new information and "
+#~ "activities will be automatically reflected "
+#~ "in this iZ HERO Teacher Panel."
+#~ msgstr "학생들이 입력한 새로운 정보와 활동 정보는 자동으로 iZ HERO 교사용 패널에 적용됩니다. "
+
+#~ msgid ""
+#~ "If you’d like to add another "
+#~ "student to your class, you can "
+#~ "click here to add new members."
+#~ msgstr "학생 계정을 더 추가하려면 이곳을 클릭해서 새로운 멤버를 추가할 수 있습니다. "
+
+#~ msgid ""
+#~ "Here, you can view your class’ "
+#~ "sticker creations and have the ability"
+#~ " to check and delete inappropriate "
+#~ "artwork."
+#~ msgstr "이곳에서 스쿼드 멤버들이 만든 스티커를 볼 수 있으며, 공유하기에 부적절한 창작물들은 삭제할 수 있습니다."
+
+#~ msgid ""
+#~ "You can also view and delete your"
+#~ " class’ storybooks that they created..."
+#~ msgstr "스쿼드 멤버들이 만든 스토리북을 보거나 삭제할 수 있습니다."
+
+#~ msgid "...and make an announcement to all your classes or an individual class."
+#~ msgstr "전체 스쿼드 혹은 개별 스쿼드를 지정하여 공지사항을 전달할 수 있습니다."
+
+#~ msgid "Done"
+#~ msgstr "완료"
+

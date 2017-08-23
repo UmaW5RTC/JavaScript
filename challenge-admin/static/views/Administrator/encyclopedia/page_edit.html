@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-xs-12">
+        <form class="form-horizontal" name="mission_form">
+            <div class="form-group">
+                <label for="category_id" class="col-sm-4 col-md-3 col-lg-2 control-label">Page ID*:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <input type="text" ng-model="page.uname" class="form-control" id="category_id" name="category_id" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name" class="col-sm-4 col-md-3 col-lg-2 control-label">Name*:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <input type="text" ng-model="page.name" class="form-control" id="name" name="name" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="descr" class="col-sm-4 col-md-3 col-lg-2 control-label">Description:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <textarea ng-model="page.descr" class="form-control" id="descr" name="descr" rows="20">
+                    </textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button ng-click="save()" type="button" ng-disabled="mission_form.$invalid" class="btn btn-success">Submit</button>
+                    <button ng-click="back()" type="button" class="btn btn-danger">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

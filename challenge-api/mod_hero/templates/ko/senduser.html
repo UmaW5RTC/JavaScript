@@ -1,0 +1,10 @@
+<p>귀하는 dqworld.net에 가입한 아이디 찾기를 요청하셨습니다.</p>
+<p>본 이메일 주소로 가입된 사용자 아이디는 아래와 같습니다.</p>
+<ol>
+    {% for acct in accounts %}
+        <li>{{acct['username']}}</li>
+    {% endfor %}
+</ol>
+<p>
+    <a href="{{url_root}}"><img style="width:200px;" src="{{url_root}}static/img/zones/landing/dqworld.png"></a>
+</p>

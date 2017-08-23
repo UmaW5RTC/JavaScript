@@ -1,0 +1,6 @@
+<p class="text-muted">
+    <span ng-show="member_list.ui.total_items">About {{member_list.ui.total_items}} records.</span>
+    <button class="btn btn-primary pull-right" ui-sref="users.schoolmembers_new">New Teacher Membership</button>
+</p>
+<div class="clearfix"></div>
+<div ui-grid="member_list.ui.grid_opts" external-scopes="member_list.grid_scope" ui-grid-resize-columns ui-grid-infinite-scroll class="grid"></div>

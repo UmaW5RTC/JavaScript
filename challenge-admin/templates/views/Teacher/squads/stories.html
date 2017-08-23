@@ -1,0 +1,68 @@
+<p>
+    <strong>{{_('Select Class')}}:</strong>
+    <select ng-model="ui.squad_code" ng-options="s.code as s.name for s in ui.squads_list">
+    </select>
+</p>
+<p>{{_('About {{ui.total || 0}} sticker(s)')}}</p>
+<div class="row">
+    <div ng-show="sticker" class="squad-sticker">
+        <p class="text-center">
+            <a ng-disabled="!ui.has_prev || ui.busy" ng-click="prev()" class="btn btn-success">{{_('Previous')}}</a>
+            <a ng-click="sticker=null" class="btn btn-primary">{{_('Back')}}</a>
+            <a ng-disabled="!ui.has_next || ui.busy" ng-click="next()" class="btn btn-success">{{_('Next')}}</a>
+        </p>
+        <div class="squad-sticker">
+            <div class="col-lg-6">
+                <div class="pull-right" style="max-width:590px;width:100%;position:relative;">
+                    <div ng-show="ui.has_page_prev" ng-click="page_prev()" style="position:absolute;top:40%;font-size:xx-large;left:5px;"><i class="fa fa-caret-square-o-left"></i></div>
+                    <div ng-show="ui.has_page_next" ng-click="page_next()" style="position:absolute;top:40%;font-size:xx-large;right:5px;"><i class="fa fa-caret-square-o-right"></i></div>
+                    <img ng-if="sticker" ng-src="{{"{{current.image}}"}}" class="img-responsive thumbnail">
+                    <div class="clearfix"></div>
+                    <h2 class="text-center" style="margin:0;">{{"{{current.caption}}"}}</h2>
+                </div>
+            </div>
+            <div class="col-lg-6 thumbnail">
+                <div class="comment">
+                    <p>
+                        <a ng-show="remove_sticker" ng-click="remove_sticker(sticker)" class="btn btn-danger">{{_('Remove from Class')}}</a>
+                        <a ng-show="share_sticker" ng-click="share_sticker(sticker)" class="btn btn-danger">{{_('Share to Class')}}</a>
+                        <a ng-hide="ui.nominate_box" ng-click="open_nominate(sticker)" class="btn btn-primary">{{_('Nominate for public gallery')}}</a>
+                        <a ng-show="ui.nominate_box" ng-click="close_nominate()" class="btn btn-primary">{{_('Cancel')}}</a>
+                        <a href="/api/izstory/download/{{"{{sticker._id}}"}}" class="btn btn-warning">{{_('Download')}}</a>
+                    </p>
+
+                    <div ng-show="ui.nominate_box" class="row">
+                        <div class="col-xs-12">
+                            <form ng-submit="nominate(ui.nominate_box)">
+                                {{_('What makes this iZ HERO’s iZ STORY so special?')}}<br>
+                                <textarea ng-model="ui.nominate_text" style="width:100%;height:400px;"></textarea>
+                                <button class="btn btn-success">{{_('Submit')}}</button>
+                                <button type="button" ng-click="close_nominate()" class="btn btn-primary">{{_('Cancel')}}</button>
+                            </form>
+                            <br><br>
+                        </div>
+                    </div>
+                    <p>
+                        <strong>{{_('By')}}: </strong>{{"{{sticker.created.username}}"}}<br>
+                        <strong>{{_('On')}}: </strong>{{'{{sticker.created.on | moment_date:"YYYY-MM-DD, hh:mm a"}}'|safe}}<br>
+                        <strong>{{_('Likes')}}: </strong>{{"{{(sticker.meta.likes && sticker.meta.likes.length) || 0}}"}}<br>
+                        <strong>{{_('Comments')}}: </strong>{{"{{(sticker.meta.comments && sticker.meta.comments.length) || 0}}"}}
+                    </p>
+                </div><br><br>
+                <p class="comment" ng-repeat="comment in sticker.meta.comments">
+                    <span>{{"{{comment.comment}}"}}</span><br>
+                    <small><strong>{{_('By')}}</strong>: <span class="text-success">{{"{{comment.created.username}}"}}</span>
+                    &bull; <strong>{{_('On')}}</strong>: <span class="text-success">{{'{{comment.created.on | moment_date:"YYYY-MM-DD, hh:mm a"}}'|safe}}</span></small>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div ng-hide="sticker" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 squad-stickers" ng-repeat="stker in stickers track by $index">
+        <div class="info-data">{{"{{stker.created.username}}"}}
+            <a ng-show="remove_sticker" ng-click="remove_sticker(stker)" class="remove"><small>{{_('Remove')}}</small></a>
+            <a ng-show="share_sticker" ng-click="share_sticker(stker)" class="remove"><small>{{_('Share to Class')}}</small></a>
+        </div>
+        <img ng-src="{{"{{stker.cover}}"}}" class="img-responsive" ng-click="open_sticker(stker, $index)">
+        <h3 class="text-center">{{"{{stker.title}}"}}</h3>
+    </div>
+</div>

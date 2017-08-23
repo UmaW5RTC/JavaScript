@@ -1,0 +1,110 @@
+<form ng-submit="genExcel()">
+    <p><button class="btn btn-default">{{ui.genexcel && 'Please wait...' || 'Download Excel'}}
+        <i ng-style="{visibility:ui.genexcel&&'visible'||'hidden'}" class="fa fa-spinner fa-spin"></i>
+    </button></p>
+</form>
+
+<select ng-model="ui.country" ng-options="c as c for c in ui.countries"></select>
+<div ui-grid="ui.grid_opts" external-scopes="grid_scope" ui-grid-resize-columns ui-grid-pagination class="grid"></div>
+<div class="row">
+    <h1>Registered Users Per Month</h1>
+    <div class="col-sm-12 col-md-8">
+        <canvas id="monthly" width="900" height="500"></canvas>
+    </div>
+    <div class="col-sm-12 col-md-4" ng-show="data.months">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Year-Month</th>
+                <th>No. of New Users</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="month in data.months">
+                <td>
+                    <a ng-click="daychart(month.year, month.month)">{{month.year}}-{{month.month}}</a>
+                </td>
+                <td>
+                    <strong>{{month.count}}</strong>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-right">
+                    <em>Total</em>
+                </td>
+                <td>
+                    <strong>{{total.year}}</strong>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <h1>Registered Users Per Day</h1>
+    <div class="col-sm-12 col-md-8">
+        <canvas id="daily" width="900" height="500"></canvas>
+    </div>
+    <div class="col-sm-12 col-md-4" ng-show="data.days">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Year-Month-Day</th>
+                <th>No. of New Users</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="day in data.days">
+                <td>
+                    <a ng-click="hourchart(day.year, day.month, day.day)">{{day.year}}-{{day.month}}-{{day.day}}</a>
+                </td>
+                <td>
+                    <strong>{{day.count}}</strong>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-right">
+                    <em>Total</em>
+                </td>
+                <td>
+                    <strong>{{total.month}}</strong>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <h1>Registered Users Per Hour</h1>
+    <div class="col-sm-12 col-md-8">
+        <canvas id="hourly" width="900" height="500"></canvas>
+    </div>
+    <div class="col-sm-12 col-md-4">
+        <table class="table table-striped" ng-show="data.hours">
+            <thead>
+            <tr>
+                <th>Year-Month-Day-Hour</th>
+                <th>No. of New Users</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="day in data.hours">
+                <td>
+                    {{day.year}}-{{day.month}}-{{day.day}} <em>{{day.hour}}:00</em>
+                </td>
+                <td>
+                    <strong>{{day.count}}</strong>
+                </td>
+            </tr>
+            <tr>
+                <td class="text-right">
+                    <em>Total</em>
+                </td>
+                <td>
+                    <strong>{{total.day}}</strong>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

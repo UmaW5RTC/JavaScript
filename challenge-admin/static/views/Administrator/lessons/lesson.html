@@ -1,0 +1,59 @@
+<div class="row">
+    <div class="col-xs-12">
+        <form class="form-horizontal" name="lesson_form">
+            <div class="form-group">
+                <label for="no" class="col-sm-4 col-md-3 col-lg-2 control-label">Lesson No.*:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <input type="number" ng-model="lesson.no" class="form-control" id="no" name="no" required>
+                    <div class="text-danger" ng-show="lesson_form.no.$dirty && lesson_form.no.$error.required">
+                        Required
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name" class="col-sm-4 col-md-3 col-lg-2 control-label">Lesson Name:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <input type="text" ng-model="lesson.name" class="form-control" id="name" name="name">
+                </div>
+            </div>
+            <div ng-hide="ui.edit" class="form-group">
+                <label for="objective" class="col-sm-4 col-md-3 col-lg-2 control-label">Learning Objective:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <textarea rows="10" id="objective" name="objective" ng-model="lesson.objective" class="form-control">
+                    </textarea>
+                </div>
+            </div>
+            <div ng-hide="ui.edit" class="form-group">
+                <label for="keypoints" class="col-sm-4 col-md-3 col-lg-2 control-label">Key Points:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <textarea rows="10" id="keypoints" name="keypoints" ng-model="lesson.keypoints" class="form-control">
+                    </textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="time" class="col-sm-4 col-md-3 col-lg-2 control-label">Time:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <input type="number" ng-model="lesson.time" class="form-control" id="time" name="time">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="pdf" class="col-sm-4 col-md-3 col-lg-2 control-label">PDF:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <input type="file" file-model="lesson.pdf" class="form-control" id="pdf" name="pdf">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="ppt" class="col-sm-4 col-md-3 col-lg-2 control-label">PPT:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <input type="file" file-model="lesson.ppt" class="form-control" id="ppt" name="ppt">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button ng-click="save(lesson)" type="button" ng-disabled="lesson_form.$invalid" class="btn btn-success">Submit</button>
+                    <button ng-click="cancel()" type="button" class="btn btn-danger">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

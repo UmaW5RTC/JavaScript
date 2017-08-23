@@ -1,0 +1,47 @@
+
+<div style="overflow:auto;">
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th width="5%"><a ng-click="sortBy('code')">Code</a></th>
+        <th width="15%"><a ng-click="sortBy('name')">Name</a></th>
+        <th width="39%">Learning Objectives</th>
+        <th width="7%">Power <a ui-sref="lessons.powers"><i class="fa fa-question-circle"></i></a><br>
+            <select style="width:100px;" ng-change="loadLessons()" ng-model="filters.power" ng-options="c._id as c.name for c in ui.powers">
+                <option value="">--ALL--</option>
+            </select>
+        </th>
+        <th width="10%" style="white-space:nowrap">SEL Competency <a ui-sref="lessons.competencies"><i class="fa fa-question-circle"></i></a><br>
+            <select style="width:100px;" ng-change="loadLessons()" ng-model="filters.competency" ng-options="c._id as c.name for c in ui.competencies">
+                <option value="">--ALL--</option>
+            </select>
+        </th>
+        <th width="10%">CW Value <a ui-sref="lessons.values"><i class="fa fa-question-circle"></i></a><br>
+            <select style="width:100px;" ng-change="loadLessons()" ng-model="filters.value" ng-options="c._id as c.name for c in ui.values">
+                <option value="">--ALL--</option>
+            </select>
+        </th>
+        <th width="10%">CW Topic <a ui-sref="lessons.topics"><i class="fa fa-question-circle"></i></a><br>
+            <select style="width:100px;" ng-change="loadLessons()" ng-model="filters.topic" ng-options="c._id as c.name for c in ui.topics">
+                <option value="">--ALL--</option>
+            </select>
+        </th>
+        <th width="2%"><a ng-click="sortBy('level')">Level</a></th>
+        <th width="2%"><a ng-click="sortBy('time')">Approx. Time</a></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="m in missions">
+        <td>#{{m.code}}</td>
+        <td><a href="{{m.link}}" target="_blank">{{m.name}}</a></td>
+        <td>{{m.objective}}</td>
+        <td ng-bind-html="m.power_title"></td>
+        <td ng-bind-html="getSEL(m.selcompetency)"></td>
+        <td ng-bind-html="getCWValue(m.cwvalue)"></td>
+        <td ng-bind-html="getCWTopic(m.cwtopic)"></td>
+        <td>{{m.level_name}}</td>
+        <td>{{m.time}}</td>
+    </tr>
+    </tbody>
+</table>
+</div>

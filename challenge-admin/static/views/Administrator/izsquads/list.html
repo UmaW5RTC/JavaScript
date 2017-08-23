@@ -1,0 +1,42 @@
+<div class="clearfix">
+    <form class="pull-left" ng-submit="genExcel()">
+        <button class="btn btn-default">
+            {{ui.genexcel && 'Please wait...' || 'Download Excel'}}
+            <i ng-style="{visibility:ui.genexcel&&'visible'||'hidden'}" class="fa fa-spinner fa-spin"></i>
+        </button>
+    </form>
+    <!--
+    <form class="pull-right" ng-submit="genMLikeExcel()">
+        <button class="btn btn-default">
+            {{ui.genexcel && 'Please wait...' || 'Download MLike Excel'}}
+            <i ng-style="{visibility:ui.genexcel&&'visible'||'hidden'}" class="fa fa-spinner fa-spin"></i>
+        </button>
+    </form>
+    <form class="pull-right" ng-submit="genMCompleteExcel()">
+        <button class="btn btn-default">
+            {{ui.genexcel && 'Please wait...' || 'Download MComplete Excel'}}
+            <i ng-style="{visibility:ui.genexcel&&'visible'||'hidden'}" class="fa fa-spinner fa-spin"></i>
+        </button>
+    </form>
+    <form class="pull-right" ng-submit="genMSlideExcel()">
+        <button class="btn btn-default">
+            {{ui.genexcel && 'Please wait...' || 'Download MSlide Excel'}}
+            <i ng-style="{visibility:ui.genexcel&&'visible'||'hidden'}" class="fa fa-spinner fa-spin"></i>
+        </button>
+    </form>
+    <form class="pull-right" ng-submit="genMStartExcel()">
+        <button class="btn btn-default">
+            {{ui.genexcel && 'Please wait...' || 'Download MStart Excel'}}
+            <i ng-style="{visibility:ui.genexcel&&'visible'||'hidden'}" class="fa fa-spinner fa-spin"></i>
+        </button>
+    </form>
+    -->
+</div>
+
+<div class="pull-right">
+    <button ng-click="deleteSquads()" ng-disabled="ui.busy" class="btn btn-danger btn-sm">DELETE</button>
+    <button ng-click="deleteSquads(true)" ng-disabled="ui.busy" class="btn btn-danger btn-sm">DELETE (includes iZ HERO accounts)</button>
+</div>
+<p ng-show="ui.total_items" class="text-muted">About {{ui.total_items}} records.</p>
+<div class="clearfix"></div>
+<div ui-grid="ui.grid_opts" external-scopes="grid_scope" ui-grid-selection ui-grid-resize-columns ui-grid-pagination class="grid"></div>

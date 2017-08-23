@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-xs-12">
+        <form class="form-horizontal" name="member_form" ng-submit="save(data)">
+            <div class="form-group">
+                <label for="sponsor" class="col-sm-4 col-md-3 col-lg-2 control-label">Sponsor:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <input type="text" ng-model="data.sponsor" value="" class="form-control" id="sponsor" name="sponsor" placeholder="Sponsor Name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="dqreport" class="col-sm-4 col-md-3 col-lg-2 control-label">DQ Report:</label>
+                <div class="col-sm-8 col-md-7 col-lg-6">
+                    <select ng-model="data.dqreport" class="form-control" id="dqreport" name="dqreport" required>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" ng-disabled="member_form.$invalid || ui.busy" class="btn btn-success">Submit</button>
+                    <button ng-click="cancel()" type="button" class="btn btn-danger">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

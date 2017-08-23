@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html ng-app="registerApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{_('Register')}} | {{_('iZ HERO Teacher')}}</title>
+
+    {%- include 'common_link_css.html' -%}
+    <link href="/static/css/style.css" rel="stylesheet">
+</head>
+<body id="teach_register" ng-controller="RegisterCtrl">
+    <div id="landing">
+        <div class="area">
+            <!--<p class="quote" style="margin:1em 0;font-size:15px;">"iZ HERO does OUTSTANDING work to promote digital citizenship for children, youth and parents!" – <em>UNESCO Director-General, Irina Bokova</em></p>-->
+            <div id="register" class="message-box yellow animated fadeInDown">
+                <div class="top-bar"></div>
+                <div class="left-bar"></div>
+                <div class="content-wrapper">
+                    <div class="content">
+                        <div class="row">
+                            <h1><img src="/static/img/zones/landing/naam.png" alt="Sign Up Now!" class="pull-left">
+                                <div class="pull-left" style="margin-top:8px;color:#000;">&nbsp;<strong>{{_('Sign Up for a Teacher Account')}}</strong></div>
+                                <div class="clearfix"></div>
+                            </h1>
+                            <div class="rbreadcrumb">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <div class="step" ng-class="{'here':ui.step==1}">
+                                            1
+                                        </div>
+                                        <div class="step-text" ng-class="{'here-text':ui.step==1}">
+                                            Username
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <div class="step" ng-class="{'here':ui.step==2}">
+                                            2
+                                        </div>
+                                        <div class="step-text" ng-class="{'here-text':ui.step==2}">
+                                            Profile Information (1/2)
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <div class="step" ng-class="{'here':ui.step==3}">
+                                            3
+                                        </div>
+                                        <div class="step-text" ng-class="{'here-text':ui.step==2}">
+                                            Profile Information (2/2)
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <div class="step" ng-class="{'here':ui.step==4}">
+                                            4
+                                        </div>
+                                        <div class="step-text" ng-class="{'here-text':ui.step==3}">
+                                            Done
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <form ng-submit="register(teach)" class="form-horizontal" name="teach_form">
+                                <div ng-if="ui.step==1" class="stepb-pad">
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <label for="username"><strong class="title-green">{{_('Username')}}</strong></label><br>
+                                            <input type="text" ng-model="teach.username" class="form-control" id="username" name="username" required ng-minlength="3" no-space ensure-unique="{{url_for('admin_teacher.register')}}">
+                                            <div class="text-danger" ng-show="teach_form.username.$dirty && teach_form.username.$error.ensureUnique">
+                                                {{_('Username is already in use. Please choose another username.')}}
+                                            </div>
+                                            <div class="text-danger" ng-show="teach_form.username.$error.noSpace">
+                                                {{_('No spaces allowed. Please choose another username.')}}
+                                            </div>
+                                            <div class="text-danger" ng-show="teach_form.username.$dirty && teach_form.username.$error.minlength">
+                                                {{_('Username must be at least 3 characters long.')}}
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <div class="pull-left speech-arrow"></div>
+                                            <div class="speech">
+                                                <small>{{ _("Do not use your full name or anything that can identify you for your Username! Be creative.") }}</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <label for="password"><strong class="title-green">{{ _("Password") }}</strong></label><br>
+                                            <input ng-model="teach.password" type="password" class="form-control" id="password" name="password" ng-minlength="8" required>
+                                            <div class="text-danger" ng-show="teach_form.password.$dirty && teach_form.password.$error.minlength">
+                                                <small>{{ _("Password must be at least 8 characters long.")}}</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <div class="pull-left speech-arrow"></div>
+                                            <div class="speech">
+                                                <small>{{ _("A strong, top secret password should contain big and small letters, numbers, and symbols.") }}</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <label for="cfmpassword"><strong class="title-green">{{ _("Type Password again") }}</strong></label><br>
+                                            <input ng-model="teach.cfmpassword" type="password" class="form-control" nx-equal="teach.password" id="cfmpassword" name="cfmpassword" required>
+                                            <div class="text-danger" ng-show="teach_form.cfmpassword.$dirty && teach_form.cfmpassword.$error.nxEqual">
+                                                <small>{{ _("Password and confirm password do not match.")}}</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div ng-if="ui.step==2" class="stepb-pad">
+                                    <div class="row block-margin">
+                                        <div class="col-xs-6">
+                                            <label for="givenname"><strong class="title-green">{{_('Name')}}</strong></label><br>
+                                            <input type="text" ng-model="teach.givenname" class="form-control" style="width:50%;display:inline-block;" id="givenname" name="givenname" placeholder="{{_('Given Name')}}" required>
+                                            <input type="text" ng-model="teach.familyname" class="form-control" style="width:252px;display:inline-block;" id="familyname" name="familyname" placeholder="{{_('Family Name')}}" required>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <label for="email"><strong class="title-green">{{_('Email')}}</strong></label><br>
+                                            <input type="email" ng-model="teach.email" class="form-control" id="email" name="email" required ensure-unique="{{url_for('admin_teacher.register')}}">
+                                            <div class="text-danger" ng-show="teach_form.email.$dirty && teach_form.email.$error.ensureUnique">
+                                                {{_('Email is already in use. Please choose another email.')}}
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <div class="pull-left speech-arrow"></div>
+                                            <div class="speech">
+                                                <small>{{ _("We have to send an email to one of your parents before we can activate your iZ HERO ID.") }}</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <label for="contact"><strong class="title-green">{{_('Phone Number')}}</strong></label>
+                                            <input type="text" ng-model="teach.contact" class="form-control" id="contact" name="contact" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div ng-if="ui.step==3" class="stepb-pad">
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <label for="country"><strong class="title-green">{{_('Country')}}</strong></label>
+                                            <select ng-model="teach.country" ng-options="c as c for c in data.countries" class="form-control" id="country" name="country" required>
+                                            <option value="">{{_('-- Select Country --')}}</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <div class="pull-left speech-arrow"></div>
+                                            <div class="speech">
+                                                <small>{{ _("Where do you live?") }}</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row block-margin">
+                                        <div class="col-xs-6">
+                                            <label for="school"><strong class="title-green">{{_('School')}}</strong></label>
+                                            <select ng-model="teach.school" ng-options="c as c for c in data.schools" class="form-control" id="school" name="school" required>
+                                            </select>
+                                            <div ng-if="teach.school == 'Others'">
+                                                <input ng-model="teach.school_others" placeholder="{{_('School Name')}}" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <div class="pull-left speech-arrow"></div>
+                                            <div class="speech">
+                                                <small>{{ _("Select your school name from the list. If your school name is not on the list, please select ‘others’ and type in yourself.") }}</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row block-margin" ng-init="teach.how='Other'">
+                                        <div class="col-xs-6">
+                                            <label><strong class="title-green">{{ _("How did you hear about us?") }}</strong></label><br>
+
+                                            <select ng-model="teach.how" class="form-control">
+                                                <option value="My Kid">{{_('My Kid')}}</option>
+                                                <option value="My Kid’s Teacher">{{_('My Kid’s Teacher')}}</option>
+                                                <option value="Friend">{{_('Friend')}}</option>
+                                                <option value="Press Coverage">{{_('Press Coverage')}}</option>
+                                                <option value="Web Search">{{_('Web Search')}}</option>
+                                                <option value="Social Media">{{_('Social Media')}}</option>
+                                                <option value="Other">{{_('Other')}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <input type="checkbox" ng-model="teach.agree" id="tnc" name="tnc" required>
+                                            <label for="tnc"><small>{{_('I have read and agreed to the iZ HERO <a href="/#/doc/terms" target="_blank">TERMS OF USE</a> & <a href="/#/doc/privacy" target="_blank">PRIVACY POLICY</a>.')}}</small></label>
+                                            <div class="text-danger" ng-show="teach_form.tnc.$dirty && teach_form.tnc.$error.required">
+                                                {{_('Please check to accept the terms and conditions to submit.')}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div ng-show="ui.step!=4" class="text-right stepb-pad">
+                                    <button type="button" ng-click="back()" ng-hide="ui.step==1" ng-disabled="ui.busy" class="btn btn-success"><span>{{ _("Back") }}</span></button>
+                                    <button type="submit" ng-disabled="ui.busy" class="btn btn-primary"><span ng-hide="ui.busy">{{ _("Next") }}</span><span ng-show="ui.busy">{{ _("Please wait...") }}</span></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-bar"></div>
+                <div class="clearfix"></div>
+                <div class="bottom-bar"></div>
+                <div class="tl-corner"></div>
+                <div class="tr-corner"></div>
+                <div class="bl-corner"></div>
+                <div class="br-corner"></div>
+                <div class="close-holder">
+                    <a class="close-btn" ng-click="close()">
+                        <img src="/static/img/ui/message-box/mission_bg_x.png" alt="Close">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--<img src="/static/img/zones/landing/en/bg.jpg" class="logo">-->
+
+        <div class="footer" style="">
+            <p>{{_('A play & learn virtual world for kids to become smart and creative digital media HEROes!')}}</p>
+            <p>{{_('&copy;%s, iZ HERO Lab PTE LTD. iZ HERO is a trademark of iZ HERO Lab PTE LTD. All rights reserved. | <a>Terms of Use</a> | <a>Privacy Policy</a>' % now().year)}}</p>
+        </div>
+    </div>
+{%-  include 'angular_main.html' -%}
+
+<script>
+    'use strict';
+    angular.module('registerApp', [])
+    .controller('RegisterCtrl', function($scope, $http){
+
+        $scope.ui = {
+            busy: false,
+            success: null,
+            error_msg: '',
+            step: 1
+        };
+
+        $scope.teach = {
+            'username': '',
+            'password': '',
+            'familyname': '',
+            'givenname': '',
+            'email': '',
+            'contact': '',
+            'country': '',
+            'school': '',
+            'school_others': '',
+            'how': ''
+        }
+
+        $scope.data = {
+            countries: [],
+            schools: []
+        };
+
+        $scope.back = function() {
+            if ($scope.ui.step > 1) {
+                $scope.ui.step--;
+            }
+        };
+
+        $scope.register = function(teach) {
+            if ($scope.ui.step < 3) {
+                $scope.ui.step++;
+                return;
+            }
+
+            $scope.ui.busy = true;
+            $scope.ui.success = null;
+
+            if (teach.school == 'Others') {
+                teach.school = teach.school_others;
+            }
+            teach.username = teach.username.toLowerCase();
+
+            $http.post("{{url_for('admin_teacher.register')}}", teach)
+                .success(function(res) {
+                    $scope.ui.busy = false;
+
+                    if ($scope.ui.success = res.success) {
+                        window.location = "{{url_for('client.activate')}}";
+                    }
+                    else {
+                        //$scope.ui.error_msg = 'Wrong email or password.';
+                    }
+                })
+                .error(function(res){
+                    $scope.ui.busy = false;
+                    $scope.ui.success = false;
+                    $scope.ui.error_msg = 'We have trouble contacting the server. Please try again.';
+                });
+        };
+
+        $scope.close = function() {
+            window.location = "/";
+        }
+
+        $http.get("{{url_for('admin_country.list')}}")
+            .success(function (res) {
+                if (res.countries) {
+                    $scope.data.countries = res.countries;
+                    if (!$scope.teach.country) {
+                        $scope.teach.country = 'Singapore';
+                    }
+                }
+            });
+
+        function updateSchools() {
+            if ($scope.teach.country) {
+                $http.get('/api/izhero/schools', {params: {country: $scope.teach.country}})
+                    .success(function (res) {
+                        if (res.schools) {
+                            $scope.data.schools = res.schools;
+                            $scope.data.schools.push('Others');
+                            if (!$scope.teach.school) {
+                                $scope.teach.school = 'Others';
+                            }
+                        }
+                    });
+            }
+        }
+
+        $scope.$watch('teach.country', updateSchools);
+    })
+    .directive('nxEqual', function() {
+        return {
+            require: 'ngModel',
+            link: function (scope, elem, attrs, model) {
+                if (!attrs.nxEqual) {
+                    return;
+                }
+                scope.$watch(attrs.nxEqual, function (value) {
+                    model.$setValidity('nxEqual', value === model.$viewValue);
+                });
+                model.$parsers.push(function (value) {
+                    var isValid = value === scope.$eval(attrs.nxEqual);
+                    model.$setValidity('nxEqual', isValid);
+                    return isValid ? value : undefined;
+                });
+            }
+        };
+    })
+    .directive('noSpace', function() {
+        return {
+            require: 'ngModel',
+            link: function(scope, ele, attrs, c) {
+                ele.bind('blur', function() {
+                    var username = scope.$eval(attrs.ngModel);
+                    var spacere = /\s/;
+                    scope.$apply(function () {
+                        c.$setValidity('noSpace', !(username && spacere.test(username)));
+                    });
+                });
+            }
+        }
+    })
+    .directive('ensureUnique', ['$http', function($http) {
+        return {
+            require: 'ngModel',
+            link: function(scope, ele, attrs, c) {
+                ele.bind('blur', function() {
+                    var params = {};
+                    params[attrs.name] = scope.$eval(attrs.ngModel);
+                    var spacere = /\s/;
+                    if (params[attrs.name] && params[attrs.name].length >= 3 && !spacere.test(params[attrs.name])) {
+                        $http.get(attrs.ensureUnique, {params: params})
+                            .success(function(res) {
+                                c.$setValidity('ensureUnique', res.success);
+                            })
+                            .error(function(res) {
+                                c.$setValidity('ensureUnique', true);
+                            });
+                    }
+                });
+            }
+        }
+    }]);
+</script>
+</body>
+</html>

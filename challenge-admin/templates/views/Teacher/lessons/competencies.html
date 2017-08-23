@@ -1,0 +1,17 @@
+<p><a ui-sref="lessons.list" class="btn btn-success">{{_('Back')}}</a></p>
+<div style="overflow:auto;">
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th width="30%">{{_('Term')}}</th>
+        <th width="70%">{{_('Definition')}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="m in ui.competencies">
+        <td>{{"{{m.name}}"}}</td>
+        <td>{{"{{m.definition}}"}}</td>
+    </tr>
+    </tbody>
+</table>
+</div>

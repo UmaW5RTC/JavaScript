@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html ng-app="activateApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Activate | iZ HERO Teacher</title>
+
+    {%- include 'common_link_css.html' -%}
+    <link href="/static/css/style.css" rel="stylesheet">
+</head>
+
+<body id="teach_register" ng-controller="ActivateCtrl">
+    <div id="landing">
+
+        <div class="area">
+            <!--<p class="quote" style="margin:1em 0;font-size:15px;">"iZ HERO does OUTSTANDING work to promote digital citizenship for children, youth and parents!" – <em>UNESCO Director-General, Irina Bokova</em></p>-->
+            <div id="login" class="message-box yellow animated fadeInDown">
+                <div class="top-bar"></div>
+                <div class="left-bar"></div>
+                <div class="content-wrapper">
+                    <div class="content">
+                        <div ng-show="ui.success==false && ui.error_msg" class="alert alert-danger">{{ "{{ ui.error_msg }}" | safe }}</div>
+
+                        <p class="text-muted" style="font-size:larger;padding:0 20px;">Please verify your email to officially<br> be a part of the Challenge!</p>
+                        <form ng-submit="activate()" ng-hide="ui.success" name="login_form" class="m-t" role="form">
+                            <div class="form-group">
+                                <!--[if IE]><label>Username</label><![endif]-->
+                                <input ng-model="data.username" name="username" type="text" class="form-control" placeholder="Username" required>
+                            </div>
+                            <div class="form-group">
+                                <!--[if IE]><label>Activation Code</label><![endif]-->
+                                <input ng-model="data.code" name="code" type="text" class="form-control" placeholder="Activation Code" required>
+                            </div>
+                            <button ng-disabled="login_form.$invalid || ui.busy" type="submit" class="btn btn-danger block full-width m-b">{{ "{{ ui.busy && 'Please wait...' || 'Activate' }}" | safe}}</button>
+
+                        </form>
+                        <div class="m-t" ng-if="ui.success">
+                            <p>Welcome back, <strong>{{ "{{ data.username }}" | safe }}</strong>.</p>
+                            <p>Please wait while we load the <strong>{{ "{{ data.role }}" | safe }}</strong> module <img src="{{ url_for('static', filename='img/spinner_dots.gif') }}"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-bar"></div>
+                <div class="clearfix"></div>
+                <div class="bottom-bar"></div>
+                <div class="tl-corner"></div>
+                <div class="tr-corner"></div>
+                <div class="bl-corner"></div>
+                <div class="br-corner"></div>
+                <div class="close-holder">
+                    <a class="close-btn" ng-click="close()">
+                        <img src="/static/img/ui/message-box/mission_bg_x.png" alt="Close">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer" style="color:#000;background:transparent;border:none;padding:0;">
+            <p style="font-size:small;margin:1em 0;">A play & learn virtual world for kids to become smart and creative digital media HEROes!</p>
+            <p style="font-size:small;margin:1em 0;">&copy;{{ now().year }}, iZ HERO Lab PTE LTD. iZ HERO is a trademark of iZ HERO Lab PTE LTD. All rights reserved. | <a>Terms of Use</a> | <a>Privacy Policy</a></p>
+        </div>
+    </div>
+
+{%-  include 'angular_main.html' -%}
+
+<script>
+    'use strict';
+
+    angular.module('activateApp', [])
+
+    .controller('ActivateCtrl', function($scope, $http){
+
+        $scope.ui = {
+            busy: false,
+            success: null,
+            resent: false,
+            error_msg: ''
+        };
+
+        $scope.data = {
+            username: '',
+            code: ''
+        };
+
+        $scope.activate = function () {
+            $scope.ui.busy = true;
+            $scope.ui.success = null;
+
+            $http.post("{{url_for('admin_teacher.activate')}}", $scope.data)
+                .success(function (res) {
+                    $scope.ui.busy = false;
+
+                    if ($scope.ui.success = res.success) {
+                        $scope.data.role = res.user.role;
+                        window.location = "{{url_for('client.index')}}";
+                    }
+                    else {
+                        $scope.ui.error_msg = 'Wrong username or activation code.';
+                    }
+                })
+
+                .error(function(res){
+                    $scope.ui.busy = false;
+                    $scope.ui.success = false;
+                    $scope.ui.error_msg = 'We have trouble contacting the server. Please try again.';
+                });
+        }
+
+        $scope.close = function() {
+            window.location = "/";
+        }
+
+    });
+
+</script>
+
+
+</body>
+</html>
