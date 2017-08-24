@@ -1,5 +1,5 @@
 <div class="content-row">
-  <h2 class="content-row-title">Time Table For students (View)</h2>
+  <h2 class="content-row-title">Event Details (View)</h2>
   <div class="row">
     <div class="col-md-12">
      
@@ -13,18 +13,49 @@
 <div class="clearfix"></div>
 
 <script type="text/javascript">
-	(function()
-	{
-		console.log('inside the function on loading');
-		//create_heaer();
-		create_detailTable(7,9);
-	})();
+  (function()
+  {
+    console.log('inside the function on loading');
+    //create_heaer();
+    create_detailTable(7,9);
+  })();
 
 function create_detailTable(days,periods)
 {
+   var months={'January':31,'February':28,'March':31,'April':30,'May':31,'June':30,'July':31,'August':31,'September':30,'October':31,'November':30,'December':31};
+   var month_names=['January','February','March','April','May','June','July','August','September','October','November','December'];
+//Start of the section to get all the dates between two dates
+  var getDates = function(startDate, endDate) {
+  var dates = [],
+      currentDate = startDate,
+      addDays = function(days) {
+        var date = new Date(this.valueOf());
+        date.setDate(date.getDate() + days);
+        return date;
+      };
+  while (currentDate <= endDate) {
+    dates.push(currentDate);
+    currentDate = addDays.call(currentDate, 1);
+  }
+  return dates;
+};
+
+// Usage
+var dates = getDates(new Date(2017,7,22), new Date(2017,8,5)); 
+  date_arr=[];                                                                                                         
+dates.forEach(function(date) {
+  var mon=month_names[date.getMonth()];
+  var day=date.getDate();
+  var day_mon=mon+'::'+day;
+  date_arr.push(day_mon);
+ // console.log(mon+'#&#'+day);
+});
+
+console.log(date_arr);
+//end of the section to get all the dates between two dates
 
 
-	var container = document.getElementById('time_table');
+  var container = document.getElementById('time_table');
     // create table element
     var table = document.createElement('table');
     var tbody = document.createElement('tbody');
@@ -32,7 +63,7 @@ function create_detailTable(days,periods)
     table.border=1;
     var row=document.createElement('tr');
        var cell = document.createElement('th');
-         cell.textContent = 'Months / Days';
+         cell.textContent = 'All Activity Details (Months / Days)';
          // cell.setAttribute("width", '100px');
          cell.setAttribute("height", '30px');
          cell.setAttribute("colspan", '32');
@@ -40,7 +71,7 @@ function create_detailTable(days,periods)
           row.appendChild(cell);
           thead.appendChild(row);
     table.appendChild(thead);
-    var months={'January':31,'February':28,'March':31,'April':30,'May':31,'June':30,'July':31,'August':31,'September':30,'October':31,'November':30,'December':31};
+   
     //Below code is to create the date vs Month
     for(var mon in months)
     {
@@ -55,10 +86,23 @@ function create_detailTable(days,periods)
           for(j=1;j<=no_of_days;j++)
           {
              var cell = document.createElement('td');
+             var day_mon=mon+'::'+j;
+             var getIdex_no=date_arr.indexOf(day_mon);
+             if(getIdex_no> -1)
+             {
+              cell.textContent = j;
+             cell.setAttribute("width", '30px');
+             cell.setAttribute("height", '30px');
+            cell.setAttribute("align", 'center');
+            cell.setAttribute("bgcolor", '#FF8A33');
+             }
+             else
+             {
             cell.textContent = j;
              cell.setAttribute("width", '30px');
              cell.setAttribute("height", '30px');
             cell.setAttribute("align", 'center');
+            }
             row.appendChild(cell);
           }
           tbody.appendChild(row);
@@ -103,6 +147,7 @@ function makeTimeIntervals(startTime, endTime, increment) {
     return r;
 };
 
+//below script is all about to fetch all the dates between two given dates
 
 
 // for (var i in a)
@@ -114,30 +159,30 @@ function makeTimeIntervals(startTime, endTime, increment) {
 //     }
     //creating time table script is end
 
-	// function create_timetable(days,periods)
-	// {
-	// 	//var table=document.createElement("table");
-	// 	// table.id="cr_tbl";
-	// 	var week_days=new Array("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday");
-	// 	var table=document.getElementById('time_table');
-	// 	table.border=1;
-	// 	for(var day=0;day<week_days.length;day++)
-	// 	{
-	// 	 var row = table.insertRow(day);   //This is to define the row after the previous row
-	// 	 	for(var perd=0;perd<=periods;perd++)
-	// 	 	{
-		 		
-	// 	 		if(perd!=0)
-	// 	 		{
-	// 	 			var cell = row.insertCell(perd);
-	// 	 			cell.innerHTML = 'PERIOD '+perd;
-	// 	 		}
-	// 	 		else
-	// 	 		{
-	// 	 			var cell = row.insertCell(perd);
-	// 	 			cell.innerHTML = week_days[day];
-	// 	 		}
-	// 	 	}
-	// 	}
-	// }
+  // function create_timetable(days,periods)
+  // {
+  //  //var table=document.createElement("table");
+  //  // table.id="cr_tbl";
+  //  var week_days=new Array("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday");
+  //  var table=document.getElementById('time_table');
+  //  table.border=1;
+  //  for(var day=0;day<week_days.length;day++)
+  //  {
+  //   var row = table.insertRow(day);   //This is to define the row after the previous row
+  //    for(var perd=0;perd<=periods;perd++)
+  //    {
+        
+  //      if(perd!=0)
+  //      {
+  //        var cell = row.insertCell(perd);
+  //        cell.innerHTML = 'PERIOD '+perd;
+  //      }
+  //      else
+  //      {
+  //        var cell = row.insertCell(perd);
+  //        cell.innerHTML = week_days[day];
+  //      }
+  //    }
+  //  }
+  // }
 </script>
